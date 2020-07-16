@@ -12,7 +12,7 @@
 </head>
 <body>
     <header>
-        <div class="header_left">
+        <div class="header-left">
             <nav class="navegacion">
                 <ul class="menu">
                     <li><a href="#">Contact</a></li>
@@ -20,9 +20,9 @@
                     {% if user.is_superuser %}	
                     <li><a class="mostrar" href="#">Mostrar</a>
                         <ul class="submenu">
-                                <li><a href="#">Listar</a></li>
-                                <li><a href="#">Crear Destino</a></li>
-                                <li><a href="#">Eliminar Destino</a></li>
+                            <li><a href="#">Listar</a></li>
+                            <li><a href="#">Crear Destino</a></li>
+                            <li><a href="#">Eliminar Destino</a></li>
                         </ul>
                     </li>
                     {% else %}
@@ -33,7 +33,6 @@
                     <li><a href="admin/auth/user/add/">Registrar</a></li>
                     <li><a href="admin">Login</a></li>
                     {% endif %}
-                    
                 </ul>
             </nav>    
         </div>

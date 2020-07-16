@@ -11,28 +11,31 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    /*background-color:#313d52;*/
 }
 header{
-    display: inline;
-}
-.header-left{
-    width: 900px;
-}
-.navegacion{
-    margin: 30px auto;
-    background: #FFF;
+    display: inline-flex;
+    width: 100%;
+    margin: 40px auto;
     padding-top: 0px;
     margin-top: 0px;
 }
+.header-left{
+    width: 80%;
+}
+.navegacion{
+    margin: auto;
+    background: #FFF;
+}
 .navegacion ul{
+    display: inline;
     color: #353535;
     list-style: none;
     font-family: 'Open sans';
 }
 
 .menu{
-    width: 100%;
+    display: block;
+    width: 20%;
 }
 .menu > li{
     position:relative;
@@ -53,8 +56,8 @@ header{
     background: #333;
     width: 100%;
     /*visibility: hidden;*/
-    /*display:none;*/
-    opacity: 0;
+    display:none;
+    /*opacity: 0;*/
     transition: 1.5s;
 }
 .submenu li a{
@@ -63,14 +66,14 @@ header{
     color: #fff;
     text-decoration: none;
 }
-.menu li :hover .submenu{
+.menu li:hover .submenu{
     /*visibility:visible;
     opacity: 1;*/
-    display: block;
+    display:block;
 }
 .header-rigth{
-    width: 100px;
-    margin: 30px auto;
+    width: 20%;
+    margin: auto;
     background: #FFF;
     padding-top: 0px;   
     margin-top: 0px;
@@ -80,5 +83,5 @@ header{
     text-decoration: none;
     font-family: 'Open sans';
     display: block;
-    padding: 15px 20px;
+    padding: 13px;
 }
