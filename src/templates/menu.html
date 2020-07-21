@@ -1,0 +1,46 @@
+{% load static %}   
+<header>
+    <div class="conteiner">
+        <div class="header-logo">
+            <a class="logo-a" href="/">
+                <img src="{% static 'images/logo.png'%}" class="logo-img" alt="logo_Documex">
+            </a>
+        </div>
+        <div class="row-menu column-menu">
+            <div class="header-left">
+                <nav class="navegacion">
+                    <ul class="menu">
+                        <li><a href="#">Contact</a></li>
+                        {% if user.is_authenticated %}
+                            {% if user.is_superuser %}	
+                            <li><a class="mostrar" href="#">Mostrar</a>
+                                <ul class="submenu">
+                                    <li><a href="#">Listar</a></li>
+                                    <li><a href="#">Crear Destino</a></li>
+                                    <li><a href="#">Eliminar Destino</a></li>
+                                </ul>
+                            </li>
+                            {% else %}
+                                <li><a href="#">Listar</a></li>	
+                            {% endif %}
+                        <li><a href="#">Logout</a></li>
+                        {% else %}
+                        <li><a href="admin/auth/user/add/">Registrar</a></li>
+                        <li><a href="admin">Login</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>    
+            </div>
+            {% if user.is_authenticated %}
+            <div class="header-rigth">
+                <a href="admin" class="user">User: {{user.username}}</a>
+            </div>
+            {% endif %}
+        </div>
+        <div class="btn-column">
+            <button type="button" class="e" data-toggle="row-menu" data-target=".column-menu">
+                <img src="{% static 'images/diligencia.png'%}" class="btn-img" alt="column">
+            </button>
+        </div>
+    </div>
+</header>

@@ -7,41 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Travello template project">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/menu.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
     <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
     <title>Documex</title>
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <nav class="navegacion">
-                <ul class="menu">
-                    <li><a href="#">Contact</a></li>
-                    {% if user.is_authenticated %}
-                    {% if user.is_superuser %}	
-                    <li><a class="mostrar" href="#">Mostrar</a>
-                        <ul class="submenu">
-                            <li><a href="#">Listar</a></li>
-                            <li><a href="#">Crear Destino</a></li>
-                            <li><a href="#">Eliminar Destino</a></li>
-                        </ul>
-                    </li>
-                    {% else %}
-                        <li><a href="#">Listar</a></li>	
-                    {% endif %}
-                    <li><a href="#">Logout</a></li>
-                    {% else %}
-                    <li><a href="admin/auth/user/add/">Registrar</a></li>
-                    <li><a href="admin">Login</a></li>
-                    {% endif %}
-                </ul>
-            </nav>    
-        </div>
-        {% if user.is_authenticated %}
-        <div class="header-rigth">
-            <h3 class="user">User: {{user.username}}</h3>
-        </div>
-        {% endif %}
-    </header>
-    
+    <!--Header-->
+    {% include 'menu.html' %}
+    {% block menu%}
+    {% endblock %}
+    <!--Noticias-->
 </body>
 </html>
