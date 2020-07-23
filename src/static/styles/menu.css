@@ -2,8 +2,8 @@
     display: none;
 }
 .conteiner {
-    background-color: #CE7D35;
-    margin: 0px 90px;
+    width: 100%;
+    margin: 0px 60px;
     padding: 0px 15px;
 }
 .header-logo{
@@ -42,7 +42,7 @@
 @media (min-width: 30em) and (max-width: 60em) {}
 @media (min-width: 700px) {
     .row-menu{
-        width: 800px;
+        width: 80%;
         display: inline-flex;
     }
     .header-left{   
@@ -86,6 +86,7 @@
         visibility: hidden;
         opacity: 0;
         transition: opacity 1.5s;
+        list-style: none;
     }
     .submenu li a{
         text-align: center;

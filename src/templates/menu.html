@@ -10,11 +10,13 @@
             <div class="header-left">
                 <nav class="navegacion">
                     <ul class="menu">
-                        <li><a href="#">inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Clientes</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">We</a></li>
+                        <li><a href="#">Costumers</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Forum</a></li>
                     </ul>
                 </nav>    
             </div>
@@ -22,22 +24,24 @@
             <div class="header-rigth">
                 <ul class="menu">
                     {% if user.is_authenticated %}
-                        {% if user.is_superuser %}	
-                        <li><a class="mostrar" href="#">Mostrar</a>
-                            <ul class="submenu">
-                                <li><a href="#">Listar</a></li>
-                                <li><a href="#">Crear Destino</a></li>
-                                <li><a href="#">Eliminar Destino</a></li>
-                            </ul>
-                        </li>
-                        <a href="admin" class="user">User: {{user.username}}</a>
-                        {% else %}
-                            <li><a href="#">Listar</a></li>	
-                        {% endif %}
-                    <li><a href="accounts/logout">Logout</a></li>
+                    <li><a class="mostrar" href="#">{{user.username}}</a>
+                        <ul class="submenu">
+                            {% if user.is_superuser %}	
+                            <li><a href="admin">Admin</a></li>
+                            <li><a href="#">Centro de Administración</a></li>	    
+                            {% else %}
+                            <li><a href="#">DocSpace</a></li>	
+                            {% endif %}                        
+                            <li><a href="accounts/logout">Logout</a></li>
+                        </ul>
+                    </li>
                     {% else %}
-                    <li><a href="admin/auth/user/add/">Registrar</a></li>
-                    <li><a href="accounts/login">Login</a></li>
+                    <li><a class="mostrar" href="#">Iniciar Sesion</a>
+                        <ul class="submenu">                                    
+                            <li><a href="admin/auth/user/add/">Registrar</a></li>
+                            <li><a href="accounts/login">Login</a></li>                           
+                        </ul>
+                    </li>
                     {% endif %}
                 </ul>
             </div>
