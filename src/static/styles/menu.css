@@ -2,6 +2,7 @@
     display: none;
 }
 .conteiner {
+    background-color: #CE7D35;
     margin: 0px 90px;
     padding: 0px 15px;
 }
@@ -37,7 +38,6 @@
         display:block;
         background: #028fcc;
     }
-
 }
 @media (min-width: 30em) and (max-width: 60em) {}
 @media (min-width: 700px) {

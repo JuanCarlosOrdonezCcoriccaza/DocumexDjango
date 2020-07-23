@@ -10,29 +10,35 @@
             <div class="header-left">
                 <nav class="navegacion">
                     <ul class="menu">
+                        <li><a href="#">inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Clientes</a></li>
                         <li><a href="#">Contact</a></li>
-                        {% if user.is_authenticated %}
-                            {% if user.is_superuser %}	
-                            <li><a class="mostrar" href="#">Mostrar</a>
-                                <ul class="submenu">
-                                    <li><a href="#">Listar</a></li>
-                                    <li><a href="#">Crear Destino</a></li>
-                                    <li><a href="#">Eliminar Destino</a></li>
-                                </ul>
-                            </li>
-                            {% else %}
-                                <li><a href="#">Listar</a></li>	
-                            {% endif %}
-                        <li><a href="#">Logout</a></li>
-                        {% else %}
-                        <li><a href="admin/auth/user/add/">Registrar</a></li>
-                        <li><a href="admin">Login</a></li>
-                        {% endif %}
                     </ul>
                 </nav>    
             </div>
             {% if user.is_authenticated %}
             <div class="header-rigth">
+                <ul class="menu">
+                    {% if user.is_authenticated %}
+                        {% if user.is_superuser %}	
+                        <li><a class="mostrar" href="#">Mostrar</a>
+                            <ul class="submenu">
+                                <li><a href="#">Listar</a></li>
+                                <li><a href="#">Crear Destino</a></li>
+                                <li><a href="#">Eliminar Destino</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+                            <li><a href="#">Listar</a></li>	
+                        {% endif %}
+                    <li><a href="#">Logout</a></li>
+                    {% else %}
+                    <li><a href="admin/auth/user/add/">Registrar</a></li>
+                    <li><a href="admin">Login</a></li>
+                    {% endif %}
+                </ul>
                 <a href="admin" class="user">User: {{user.username}}</a>
             </div>
             {% endif %}
