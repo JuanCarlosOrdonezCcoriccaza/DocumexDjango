@@ -18,7 +18,7 @@
                     </ul>
                 </nav>    
             </div>
-            {% if user.is_authenticated %}
+            
             <div class="header-rigth">
                 <ul class="menu">
                     {% if user.is_authenticated %}
@@ -30,18 +30,17 @@
                                 <li><a href="#">Eliminar Destino</a></li>
                             </ul>
                         </li>
+                        <a href="admin" class="user">User: {{user.username}}</a>
                         {% else %}
                             <li><a href="#">Listar</a></li>	
                         {% endif %}
-                    <li><a href="#">Logout</a></li>
+                    <li><a href="accounts/logout">Logout</a></li>
                     {% else %}
                     <li><a href="admin/auth/user/add/">Registrar</a></li>
-                    <li><a href="admin">Login</a></li>
+                    <li><a href="accounts/login">Login</a></li>
                     {% endif %}
                 </ul>
-                <a href="admin" class="user">User: {{user.username}}</a>
             </div>
-            {% endif %}
         </div>
         <div class="btn-column">
             <button type="button" class="e" data-toggle="row-menu" data-target=".column-menu">
