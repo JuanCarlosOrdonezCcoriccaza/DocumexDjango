@@ -22,7 +22,13 @@
             <div class="header-rigth">
                 <ul class="menu">
                     {% if user.is_authenticated %}
-                    <li><a class="mostrar" href="#">{{user.username}}</a>
+                    <li><a class="mostrar" href="#">
+                        {% if user.is_superuser %}	
+                        Administrador: {{user.username}}
+                        {%else%}
+                        Usuario: {{user.username}}
+                        {% endif %}
+                        </a>
                         <ul class="submenu">
                             {% if user.is_superuser %}	
                             <li><a href="admin">Admin</a></li>
