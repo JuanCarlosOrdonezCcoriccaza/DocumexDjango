@@ -10,7 +10,7 @@ body{
     /*background-image: url(/static/images/news_6.jpg);*/
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover 
 }
 header{
     display: inline-flex;
