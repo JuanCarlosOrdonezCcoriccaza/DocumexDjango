@@ -7,6 +7,10 @@ class Usuario(models.Model):
     nombre = models.CharField(max_length = 100)
     apellido = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
+    fechaNacimiento = models.DateField()
+    sexo = models.CharField(max_length=1)
+    direccion = models.CharField(max_length=100)
+    dni = models.IntegerField(max_length = 8)
     correo = models.EmailField(max_length = 100)
 
 class Administrador(models.Model):
