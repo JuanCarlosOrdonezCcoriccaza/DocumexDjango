@@ -18,7 +18,7 @@
         width:45%;
         background-image: url("../images/fondoD.jpg");
         background-repeat: no-repeat;
-        background-color: red;
+        background-color: white;
         background-size: 100% 100%;
         background-position: center;
         height: 100%;
@@ -131,8 +131,87 @@
         background-color: #f2f2f2;
     }
     #main{
-        width:30%;
-        /*background-color:skyblue; */
+        width:90vw;
+        height:90vh;
+        min-height: 500px;
+        background-color:white;
+        margin: 30px auto;
+    }
+    #logo{
+        width:45%;
+        background-image: url("../images/fondoD.jpg");
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: 100% 100%;
+        background-position: center;
+        height: 100%;
+        float:left;
+    }
+    #contenido{
+        float:left;
+        padding-top:150px;
+        width:55%;
+        height:74%;
+        /*background-color: green;*/
+    }
+    img{
+        display: block;
+        width: 100px;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    h1{
+        text-align: center;
+        font-size: 25px;
+        /*background-color: purple;*/
+        text-transform: uppercase;
+    }
+    input{
+        display:block;
+        width: 60%;
+        height:40px;
+        padding: 10px;
+        padding-left: 30px;
+        margin: 20px auto 20px auto;
+        outline:none;
+        border-color: rgb(197, 197, 197);
+        border-width: 1px;
+        border-style: solid;
+        font-size: 17px;
+        color: #666666;
+        transition: 0.1s;
+    }
+    :not(#ingresar):focus{
+        border: solid 1px #028fcc;
+        transition: 0.1s;
+    }
+    #ingresar{
+        color:white;
+        background-color: #028fcc;
+        border-style:none;
+        transition: 0.4s;
+        text-transform: uppercase;
+        font-size: 12px;
+        border-radius: 5px;
+        width: 72%;
+    }
+    #ingresar:hover{
+        background-color: #212529;
+        transition: 0.4s;
+    }
+    #registro{
+        text-decoration: none;
+        color: #028fcc;
+    }
+    #footer_div{
+        color: #666666;
+        /*background-color: orange;*/
+        text-align: center;
+        height: 40px;
+    }
+    #footer_div span{
+        display:inline-block;
+        padding-top:10px;
     }
 }
 
