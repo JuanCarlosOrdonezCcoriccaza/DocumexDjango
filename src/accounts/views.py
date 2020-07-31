@@ -69,3 +69,11 @@ def loginUsuario(request):
 def crearAdministrador(request):
     #template para registrar administrar
     return render(request,'registerAdmin.html')
+
+def loginAdministrador(request):
+    administrador = Administrador.objects.all()
+    contexto = {
+        "user" : administrador.nombre,
+        "password" : administrador.password
+    }
+    return render(request,'loginAdmin.html')
