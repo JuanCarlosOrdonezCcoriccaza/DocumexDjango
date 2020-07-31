@@ -78,7 +78,7 @@
         height:40px;
         padding: 10px;
         padding-left: 30px;
-        margin: 20px auto 20px auto;
+        margin: 10px auto 10px auto;
         outline:none;
         border-color: rgb(197, 197, 197);
         border-width: 1px;
@@ -148,7 +148,7 @@
     #main{
         width:90vw;
         height:90vh;
-        min-height: 500px;
+        min-height: 650px;
         background-color:white;
         margin: 30px auto;
     }
@@ -164,10 +164,21 @@
     }
     #contenido{
         float:left;
-        padding-top:150px;
         width:55%;
         height:74%;
+        padding-top: 10%;
+        
         /*background-color: green;*/
+    }
+    @media screen and (min-height:400px) and (max-height:700px){
+        #contenido{
+            float:left;
+            width:55%;
+            height:74%;
+            padding-top: 0;
+            
+            /*background-color: green;*/
+        }
     }
     img{
         display: block;
@@ -186,10 +197,10 @@
     input{
         display:block;
         width: 60%;
-        height:40px;
+        height:30px;
         padding: 10px;
         padding-left: 30px;
-        margin: 20px auto 20px auto;
+        margin: 2px auto 2px auto;
         outline:none;
         border-color: rgb(197, 197, 197);
         border-width: 1px;
@@ -211,6 +222,7 @@
         font-size: 15px;
         border-radius: 5px;
         width: 72%;
+        height: 40px;
     }
     #ingresar:hover{
         background-color: #212529;
@@ -240,13 +252,14 @@
     #main{
         width:90vw;
         height:90vh;
-        min-height: 500px;
+        min-height: 800px;
         background-color:white;
         margin: 30px auto;
     }
     #logo{
         width:100%;
         height: 60px;
+        margin-bottom: -50px;
     }
     #contenido{
         padding-top: 100px;
@@ -270,7 +283,7 @@
     input{
         display:block;
         width: 77%;
-        height:40px;
+        height:20px;
         padding: 10px;
         padding-left: 30px;
         margin: 20px auto 20px auto;
@@ -296,6 +309,7 @@
         font-size: 15px;
         border-radius: 5px;
         width: 85%;
+        height:40px;
     }
     #ingresar:hover{
         background-color: #212529;

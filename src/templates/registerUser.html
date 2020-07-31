@@ -23,14 +23,14 @@
                     <form action="login" method="post" id="form1">
                         {% csrf_token %}
                         <div id="user_pass">
-                            <input type="text" name="username" id="nombres" maxlength="20" placeholder="Nombre de usuario">
-                            <input type="password" name="password" id="apellidos" placeholder="Contraseña">
-                            <input type="text" name="username" id="correo" maxlength="20" placeholder="Correo electrónico">
-                            <input type="text" name="username" id="dni" maxlength="20" placeholder="DNI">
+                            <input type="text" name="nombres" id="nombres" maxlength="20" placeholder="Nombres">
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                            <input type="email" name="correo" id="correo" maxlength="20" placeholder="Correo electrónico">
+                            <input type="text" name="dni" id="dni" maxlength="20" placeholder="DNI">
                             <input type="password" name="password" id="password" placeholder="Contraseña">
-                            <input type="password" name="password" id="fnacimiento" placeholder="Fecha de nacimiento">
-                            <input type="password" name="password" id="sexo" placeholder="Sexo">
-                            <input type="password" name="password" id="direccion" placeholder="Dirección">
+                            <input type="date" name="fnacimiento" id="fnacimiento" placeholder="Fecha de nacimiento">
+                            <input type="text" name="sexo" id="sexo" placeholder="Sexo (M o F)">
+                            <input type="text" name="direccion" id="direccion" placeholder="Dirección">
                         </div>
                         <input type="submit" value="Registrar" id="ingresar">
                     </form>
