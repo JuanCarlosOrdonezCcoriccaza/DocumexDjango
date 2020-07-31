@@ -4,10 +4,11 @@ from django.db import models
 
 class Usuario(models.Model):
     id = models.AutoField(primary_key = True)
-    nombre = models.CharField(max_length = 100)
-    apellido = models.CharField(max_length = 100)
+    nombres = models.CharField(max_length = 100)
+    apellidos = models.CharField(max_length = 100)
     correo = models.EmailField(max_length = 100)
     dni = models.IntegerField(max_length = 8)
+    usuario = models.CharField(max_length=100)
     password = models.CharField(max_length = 100)
     fechaNacimiento = models.DateField()
     sexo = models.CharField(max_length=1)
@@ -16,9 +17,9 @@ class Usuario(models.Model):
     
 
 class Administrador(models.Model):
-    id = models.AutoField(primary_key= = True)
-    nombre = models.CharField(max_length = 100)
-    apellido = models.CharField(max_length = 100)
+    id = models.AutoField(primary_key= True)
+    nombres = models.CharField(max_length = 100)
+    apellidos = models.CharField(max_length = 100)
     correo = models.EmailField(max_length = 100)
     dni = models.IntegerField(max_length = 8)
     password = models.CharField(max_length = 100)

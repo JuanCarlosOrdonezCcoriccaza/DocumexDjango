@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from .forms import UsuarioForm
 # Create your views here.
 
 def login(request):
@@ -56,7 +57,11 @@ def logout (request):
 
 def crearUsuario(request):
     #template para registrar usuarios
-    return render(request,'registerUser.html')
+    form = UsuarioForm()
+    contexto = {
+        'form' : form
+    }
+    return render(request,'registerUser.html',contexto)
 
 def loginUsuario(request):
     usuario = Usuario.objects.all()

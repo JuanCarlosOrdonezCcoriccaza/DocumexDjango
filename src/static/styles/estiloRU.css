@@ -93,7 +93,7 @@
         margin: 10px auto;
         padding-left:4%;
     }
-    #nombres,#apellidos,#correo,#dni,#fnacimiento,#sexo,#direccion,#password{
+    #nombres,#apellidos,#correo,#dni,#fnacimiento,#sexo,#direccion,#usuario,#password{
         display:inline-block;
         width: 37%;
         height:40px;
@@ -166,7 +166,7 @@
         float:left;
         width:55%;
         height:74%;
-        padding-top: 10%;
+        padding-top: 5%;
         
         /*background-color: green;*/
     }
@@ -252,7 +252,7 @@
     #main{
         width:90vw;
         height:90vh;
-        min-height: 800px;
+        min-height: 870px;
         background-color:white;
         margin: 30px auto;
     }
