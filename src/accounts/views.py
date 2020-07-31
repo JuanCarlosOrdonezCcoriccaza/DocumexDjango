@@ -59,5 +59,9 @@ def crearUsuario(request):
     return render(request,'registerUser.html')
 
 def loginUsuario(request):
-
-    return render(request,'loginUser.html')
+    usuario = Usuario.objects.all()
+    contexto = {
+        "user" : usuario.nombre,
+        "password" : usuario.password
+    }
+    return render(request,'loginUser.html',contexto)
