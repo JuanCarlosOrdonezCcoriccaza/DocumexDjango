@@ -1,6 +1,33 @@
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Medium;
+    src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-Bold;
+    src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Poppins-SemiBold;
+    src: url('../fonts/poppins/Poppins-SemiBold.ttf'); 
+  }
+  
+  @font-face {
+    font-family: Montserrat-Bold;
+    src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+  }
+
+
 *{
     padding:0;
     margin:0;
+    font-family: Poppins-Regular, sans-serif;
 }
 /* Monitor PC */
 @media screen and (min-width:1200px){
@@ -42,6 +69,8 @@
         font-size: 25px;
         /*background-color: purple;*/
         text-transform: uppercase;
+        color: #555555;
+        font-weight: 500;
     }
     input{
         display:block;
@@ -102,7 +131,7 @@
         border-style:none;
         transition: 0.4s;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 15px;
         border-radius: 5px;
         width: 67%;
     }
@@ -165,6 +194,8 @@
         font-size: 25px;
         /*background-color: purple;*/
         text-transform: uppercase;
+        color: #555555;
+        font-weight: 500;
     }
     input{
         display:block;
@@ -191,7 +222,7 @@
         border-style:none;
         transition: 0.4s;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 15px;
         border-radius: 5px;
         width: 72%;
     }
@@ -247,6 +278,8 @@
         font-size: 25px;
         /*background-color: purple; */
         text-transform: uppercase;
+        color: #555555;
+        font-weight: 500;
     }
     input{
         display:block;
@@ -274,7 +307,7 @@
         border-style:none;
         transition: 0.4s;
         text-transform: uppercase;
-        font-size: 12px;
+        font-size: 15px;
         border-radius: 5px;
         width: 85%;
     }
