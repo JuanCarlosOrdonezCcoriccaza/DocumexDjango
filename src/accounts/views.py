@@ -65,3 +65,7 @@ def loginUsuario(request):
         "password" : usuario.password
     }
     return render(request,'loginUser.html',contexto)
+
+def crearAdministrador(request):
+    #template para registrar administrar
+    return render(request,'registerAdmin.html')
