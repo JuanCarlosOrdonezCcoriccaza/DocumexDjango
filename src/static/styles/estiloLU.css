@@ -10,12 +10,17 @@
     #main{
         width:75vw;
         height:90vh;
+        min-height: 500px;
         background-color:white;
         margin: 30px auto;
     }
     #logo{
         width:45%;
-        background-color: red;
+        background-image: url("../images/fondoD.jpg");
+        background-repeat: no-repeat;
+        background-color: white;
+        background-size: cover;
+        background-position: center;
         height: 100%;
         float:left;
     }
@@ -24,18 +29,18 @@
         padding-top:150px;
         width:55%;
         height:74%;
-        background-color: green;
+        /*background-color: green;*/
     }
     img{
         display: block;
-        width: 50px;
+        width: 100px;
         margin: 10px auto;
         padding: 10px;
     }
     h1{
         text-align: center;
         font-size: 25px;
-        background-color: purple;
+        /*background-color: purple;*/
         text-transform: uppercase;
     }
     input{
@@ -54,10 +59,10 @@
         transition: 0.1s;
     }
     #user_pass{
-        background-color: blue;
+        /*background-color: blue;*/
         width:70%;
         margin: 10px auto;
-        padding-left:5%;
+        padding-left:4%;
     }
     #usuario{
         display:inline-block;
@@ -78,7 +83,7 @@
         width: 37%;
         height:40px;
         padding: 10px 20px;
-        margin-left: -5px;
+        margin-left: -4px;
         outline:none;
         border-color: rgb(197, 197, 197);
         border-width: 1px;
@@ -111,7 +116,7 @@
     }
     #footer_div{
         color: #666666;
-        background-color: orange;
+        /*background-color: orange;*/
         text-align: center;
         height: 40px;
     }
@@ -139,6 +144,7 @@
     #main{
         width:90vw;
         height:90vh;
+        min-height: 500px;
         background-color:white;
         margin: 30px auto;
     }
