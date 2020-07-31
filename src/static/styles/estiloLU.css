@@ -34,7 +34,7 @@
         margin: 10px auto;
     }
     #logo{
-        background-color: #028fcc;
+        
         width:100%;
         height: 60px;
     }
@@ -43,6 +43,7 @@
     }
     img{
         display: block;
+        width: 50px;
         margin: 10px auto;
         padding: 10px;
     }
@@ -63,5 +64,17 @@
     }
     #footer_div{
         background-color: orange;
+    }
+    #ingresar{
+        color:white;
+        background-color: #028fcc;
+        border-style:none;
+        transition: 0.4s;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+    #ingresar:hover{
+        background-color: #212529;
+        transition: 0.4s;
     }
 }
