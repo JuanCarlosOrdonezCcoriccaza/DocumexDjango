@@ -14,8 +14,9 @@ class Administrador(models.Model):
     nombre = models.CharField(max_length = 100)
     apellido = models.CharField(max_length = 100)
     password = models.CharField(max_length = 100)
-    estado = models.BooleanField(default = False
+    estado = models.BooleanField(default = False)
     dni = models.IntegerField(max_length = 8)
     sexo = models.CharField(max_length=1)
+    fechaNacimiento = models.DateField()
     direccion = models.CharField(max_length=100)
     correo = models.EmailField(max_length = 100)
