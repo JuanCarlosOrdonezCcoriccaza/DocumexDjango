@@ -14,15 +14,16 @@
         margin: 30px auto;
     }
     #logo{
-        width:50%;
+        width:45%;
         background-color: red;
         height: 100%;
         float:left;
     }
     #contenido{
         float:left;
-        width:50%;
-        height:100%;
+        padding-top:150px;
+        width:55%;
+        height:74%;
         background-color: green;
     }
     img{
@@ -52,7 +53,40 @@
         color: #666666;
         transition: 0.1s;
     }
-    
+    #user_pass{
+        background-color: blue;
+        width:70%;
+        margin: 10px auto;
+        padding-left:5%;
+    }
+    #usuario{
+        display:inline-block;
+        width: 37%;
+        height:40px;
+        padding: 10px 20px;
+        margin:0;
+        outline:none;
+        border-color: rgb(197, 197, 197);
+        border-width: 1px;
+        border-style: solid;
+        font-size: 17px;
+        color: #666666;
+        transition: 0.1s;
+    }
+    #password{
+        display:inline-block;
+        width: 37%;
+        height:40px;
+        padding: 10px 20px;
+        margin-left: -5px;
+        outline:none;
+        border-color: rgb(197, 197, 197);
+        border-width: 1px;
+        border-style: solid;
+        font-size: 17px;
+        color: #666666;
+        transition: 0.1s;
+    }
     :not(#ingresar):focus{
         border: solid 1px #028fcc;
         transition: 0.1s;
@@ -65,7 +99,7 @@
         text-transform: uppercase;
         font-size: 12px;
         border-radius: 5px;
-        width: 85%;
+        width: 67%;
     }
     #ingresar:hover{
         background-color: #212529;
