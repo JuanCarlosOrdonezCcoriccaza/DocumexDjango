@@ -16,4 +16,3 @@ class Administrador(models.Model):
     password = models.CharField(max_length = 100)
     estado = models.BooleanField(default = False
     correo = models.EmailField(max_length = 100)
-

@@ -53,3 +53,11 @@ def register(request):
 def logout (request):
     auth.logout(request)
     return redirect('/')
+
+def crearUsuario(request):
+    #template para registrar usuarios
+    return render(request,'registerUser.html')
+
+def loginUsuario(request):
+
+    return render(request,'loginUser.html')
