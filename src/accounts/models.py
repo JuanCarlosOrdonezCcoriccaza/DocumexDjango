@@ -13,7 +13,8 @@ class Usuario(models.Model):
     fechaNacimiento = models.DateField()
     sexo = models.CharField(max_length=1)
     direccion = models.CharField(max_length=100)
-    
+    def __str__(self):
+        return self.nombres
     
 
 class Administrador(models.Model):

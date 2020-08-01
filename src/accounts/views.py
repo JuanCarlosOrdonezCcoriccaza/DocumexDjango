@@ -56,10 +56,7 @@ def logout (request):
     return redirect('/')
 
 def crearUsuario(request):
-    #template para registrar usuarios
     if request.method == 'POST':
-        print("se envio por post")
-        print(request.POST['nombres'])
 
         nombres = request.POST['nombres']
         apellidos = request.POST['apellidos']
@@ -73,8 +70,8 @@ def crearUsuario(request):
 
         usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=fechaNacimiento,sexo=sexo,direccion=direccion)
         usuario.save()
-        messages.info(request,'User Created')
-        print('Usuario Created !!!!!!!!!!!!!!!!!1')
+        messages.info(request,'Usuario creado exitosamente')
+        print('Usuario Creado con exito')
     else:
         print("no se envio nada")
     return render(request,'registerUser.html')
