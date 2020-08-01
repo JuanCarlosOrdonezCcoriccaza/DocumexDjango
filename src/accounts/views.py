@@ -1,6 +1,7 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from .models import Usuario, Administrador
 # Create your views here.
 
 def login(request):
@@ -58,7 +59,22 @@ def crearUsuario(request):
     #template para registrar usuarios
     if request.method == 'POST':
         print("se envio por post")
-        print(request.POST)
+        print(request.POST['nombres'])
+
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        usuario = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+
+        usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=fechaNacimiento,sexo=sexo,direccion=direccion)
+        usuario.save()
+        messages.info(request,'User Created')
+        print('Usuario Created !!!!!!!!!!!!!!!!!1')
     else:
         print("no se envio nada")
     return render(request,'registerUser.html')
