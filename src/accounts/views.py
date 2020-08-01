@@ -6,7 +6,7 @@ from .models import Usuario, Administrador
 
 def login(request):
     if request.method=='POST':
-        username = request.POST['username']
+        username = request.POST['usuario']
         password = request.POST['password']
         user = auth.authenticate(username=username,password=password)
         if user is not None:
@@ -57,7 +57,6 @@ def logout (request):
 
 def crearUsuario(request):
     if request.method == 'POST':
-
         nombres = request.POST['nombres']
         apellidos = request.POST['apellidos']
         correo = request.POST['correo']
@@ -75,6 +74,12 @@ def crearUsuario(request):
     else:
         print("no se envio nada")
     return render(request,'registerUser.html')
+
+def editarUsuario(request,id):
+    pass
+    #usuario = Usuario.objects.get(id = id)
+    #if request.method == 'GET':
+        
 
 def loginUsuario(request):
     usuario = Usuario.objects.all()

@@ -14,7 +14,7 @@ class Usuario(models.Model):
     sexo = models.CharField(max_length=1)
     direccion = models.CharField(max_length=100)
     def __str__(self):
-        return self.nombres
+        return self.usuario
     
 
 class Administrador(models.Model):
