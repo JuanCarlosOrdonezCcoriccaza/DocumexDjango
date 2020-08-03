@@ -1,10 +1,11 @@
+{%load static%}
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
         <title>Documex Login Usuario</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/estiloLU.css' %}">
         <script src="jquery-3.1.1.min.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
         <link rel="icon" type="image/png" href="#">
@@ -12,38 +13,33 @@
     </head>
     <body>
         <div id="main">        
-            <div id="logo"><a href="#"><img src="#"></a></div>  
-            
+            <div id="logo">
+                <a href="/"><img src="{% static 'images/documex.png' %}"></a>
+            </div>
             <div id="contenido">
                 <diV id="form">
                     <h1>Ingreso de Usuarios</h1>
                     <form action="login" method="post" id="form1">
                         {% csrf_token %}
-                        <label>Nombre de Usuario</label>
-                        <input type="text" name="username" id="username" maxlength="20" placeholder="Ingrese usuario">
-
-                        <label>Contraseña</label>
-                        <input type="password" name="password" id="password" placeholder="Ingrese contraseña">
-                        <input type="submit" value="Ingresar" id="Ingresar">
+                        <div id="user_pass">
+                        <input type="text" name="usuario" id="usuario" maxlength="20" placeholder="Nombre de usuario">
+                        <input type="password" name="password" id="password" placeholder="Contraseña">
+                        </div>
+                        <input type="submit" value="Ingresar" id="ingresar">
                     </form>
-                    <div id="respuesta">
+                    <div id="respuesta" style="text-align: center;">
                         {% for message in messages %}
                         <h3> {{message}}</h3>
                         {% endfor %}
                     </div>
                 </div>
                 <div id="footer_div">
-                            <span>¿Eres nuevo?<br/>No te preocupes registrate</span>
-                            <button id="registro"><a href="register" id="registro">Regístrate aquí</a></button>
+                            <span>¿Eres nuevo? </span>
+                            <a href="/accounts/registerUser" id="registro">Regístrate aquí</a>
                    
                 </div>
             </div>
-            <div id="consulta">
-                    <p>¿Dudas o consultas?</p>
-                    <p>Comunícate con nosotros o</p>
-                    <p>acércate a la agencia más cercana.</p>
-                    <p id="tel"><a href="#">Documex</a></p>
-            </div>
+            
         </div>
         <script src="#" type="#"></script>
     </body>

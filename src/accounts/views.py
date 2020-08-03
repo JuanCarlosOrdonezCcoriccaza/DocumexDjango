@@ -1,13 +1,14 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from .models import Usuario, Administrador
 # Create your views here.
 
 def login(request):
     if request.method=='POST':
-        username = request.POST['username']
+        usuario = request.POST['usuario']
         password = request.POST['password']
-        user = auth.authenticate(username=username,password=password)
+        user = auth.authenticate(usuario=usuario,password=password)
         if user is not None:
             auth.login(request,user)
             return redirect("/")
@@ -53,3 +54,65 @@ def register(request):
 def logout (request):
     auth.logout(request)
     return redirect('/')
+
+def crearUsuario(request):
+    if request.method == 'POST':
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        usuario = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+        if nombres=='' and apellidos=='' and correo=='' and dni=='':
+            messages.info(request,'Usuario no Creado.')
+            return redirect('registerUser')
+        else: 
+            if usuario=='' or password=='':
+                messages.info(request,'Debes crear un Usuario y una Contraseña.')
+                return redirect('registerUser')
+            else:
+                if User.objects.filter(correo=correo).exists():        
+                    messages.info(request,'Esta direccion de Email ya existe.')
+                    return redirect('registerUser')
+                else:
+                    if Usuario.objects.filter(usuario=usuario).exists():
+                        messages.info(request,'Este usuario ya esta en uso.')
+                        return redirect('registerUser')
+                    else:    
+                        usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=fechaNacimiento,sexo=sexo,direccion=direccion)
+                        usuario.save()
+                        messages.info(request,'Usuario creado exitosamente')
+                        print('Usuario Creado con exito')
+                
+    else:
+        print("no se envio nada")
+    return render(request,'registerUser.html')
+
+def editarUsuario(request,id):
+    pass
+    #usuario = Usuario.objects.get(id = id)
+    #if request.method == 'GET':
+        
+
+def loginUsuario(request):
+    usuario = Usuario.objects.all()
+    contexto = {
+        "user" : usuario.nombre,
+        "password" : usuario.password
+    }
+    return render(request,'loginUser.html',contexto)
+
+def crearAdministrador(request):
+    #template para registrar administrar
+    return render(request,'registerAdmin.html')
+
+def loginAdministrador(request):
+    administrador = Administrador.objects.all()
+    contexto = {
+        "user" : administrador.nombre,
+        "password" : administrador.password
+    }
+    return render(request,'loginAdmin.html')

@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
+        <title>Documex Registro Usuario</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/estiloRU.css' %}">
+        <script src="jquery-3.1.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+        <link rel="icon" type="image/png" href="#">
+        
+    </head>
+    <body>
+        <div id="main">        
+            <div id="logo">
+                <a href="/"><img src="{% static 'images/documex.png' %}"></a>
+            </div>  
+            
+            <div id="contenido">
+                <diV id="form">
+                    <h1>Registro de Usuario</h1>
+                    <form method="post" id="form1">
+                        {% csrf_token %}
+                        <div id="user_pass">
+                            <input type="text" name="nombres" id="nombres" maxlength="20" placeholder="Nombres">
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
+                            <input type="email" name="correo" id="correo" maxlength="20" placeholder="Correo electrónico">
+                            <input type="text" name="dni" id="dni" maxlength="20" placeholder="DNI">
+                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario">
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                            <input type="date" name="fnacimiento" id="fnacimiento" placeholder="Fecha de nacimiento">
+                            <input type="text" name="sexo" id="sexo" placeholder="Sexo (M o F)">
+                            <input type="text" name="direccion" id="direccion" placeholder="Dirección">
+                        </div>
+                        <input type="submit" value="Registrar" id="ingresar">
+                    </form>
+                    <div id="respuesta" style="text-align: center;">
+                        {% for message in messages %}
+                        <h3> {{message}}</h3>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div id="footer_div">
+                            <span>¿Ya te has registrado? </span>
+                            <a href="/accounts/login" id="registro">Ingresa aquí</a>
+                   
+                </div>
+            </div>
+            
+        </div>
+        <script src="#" type="#"></script>
+    </body>
+</html>
