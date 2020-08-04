@@ -93,7 +93,7 @@
         margin: 10px auto;
         padding-left:4%;
     }
-    #nombres,#apellidos,#correo,#dni,#fnacimiento,#sexo,#direccion,#usuario,#password{
+    #nombres,#apellidos,#correo,#dni,#fnacimiento,#sexo,#direccion,#usuario,#password,#imagen{
         display:inline-block;
         width: 37%;
         height:40px;
@@ -107,6 +107,7 @@
         color: #666666;
         transition: 0.1s;
     }
+
     :not(#ingresar):focus{
         border: solid 1px #028fcc;
         transition: 0.1s;
