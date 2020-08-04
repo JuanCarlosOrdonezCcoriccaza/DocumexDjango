@@ -32,7 +32,7 @@ class Usuario(models.Model):
     sexo        = models.CharField(max_length=1,null=False)
     direccion   = models.CharField(max_length=100,null=False)
     estado      = models.BooleanField(default=False)
-    imagen      = models.models.ImageField(upload_to="foto-Usuario" , null = True)
+    imagen      = models.ImageField(upload_to="foto-Usuario" , null = True)
     def __str__(self):
         return self.usuario
     
@@ -49,6 +49,6 @@ class Administrador(models.Model):
     fechaNacimiento = models.DateField()
     sexo        = models.CharField(max_length=1)
     direccion   = models.CharField(max_length=100)
-    imagen      = models.models.ImageField(upload_to="foto-Administrador" , null=True)
+    imagen      = models.ImageField(upload_to="foto-Administrador" , null=True)
     def __str__(self):
         return self.Administrador
