@@ -10,11 +10,14 @@
             <div class="header-left">
                 <nav class="navegacion">
                     <ul class="menu">
-                        <li><a href="#">Inicio</a></li>
+                        <li><a href="/">Inicio</a></li>
                         <li><a href="#services">Servicios</a></li>
                         <li><a href="#about-us">Nosotros</a></li>
                         <li><a href="#contact">Contáctanos</a></li>
                         <li><a href="#">Noticias</a></li>
+                        {% if user.is_authenticated %}
+                        <li><a href="herramientas">Herramientas</a></li>
+                        {% endif %}
                     </ul>
                 </nav>    
             </div>
@@ -36,6 +39,7 @@
                             {% else %}
                             <li><a href="#">DocSpace</a></li>	
                             {% endif %}                        
+                            <li><a href="herramientas">Herramientas</a></li>
                             <li><a href="accounts/logout">Logout</a></li>
                         </ul>
                     </li>

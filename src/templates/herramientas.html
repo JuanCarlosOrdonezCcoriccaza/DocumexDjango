@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Travello template project">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/menu.css' %}">
+    
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
+    <!--Plantilla-->
+    <link href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/animate.min.css' %}" rel="stylesheet"><!--Animacion?--> 
+    <link href="{% static 'styles/font-awesome.min.css' %}" rel="stylesheet"><!--flechas direccion y iconos F T M-->
+    <link href="{% static 'styles/lightbox.css' %}" rel="stylesheet"><!--Cerrar -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+    <link id="css-preset" href="{% static 'styles/preset1.css' %}" rel="stylesheet">
+    <link href="{% static 'styles/responsive.css' %}" rel="stylesheet"><!--Tamaños-->
+    <title>Documex Herramientas</title>
+</head>
+<body>
+    <!--Header-->
+    {% include 'menu.html' %}
+    {% block menu%}
+    {% endblock %}
+
+  
+</body>
+</html>

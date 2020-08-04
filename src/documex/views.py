@@ -5,3 +5,5 @@ from django.http import HttpResponse
 def index(request):
     return render(request,"index.html")
     
+def herramientas(request):
+    return render(request,"herramientas.html")

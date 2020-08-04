@@ -24,7 +24,8 @@
     {% include 'menu.html' %}
     {% block menu%}
     {% endblock %}
-    <!--Noticias-->
+     <!--pagina de operaciones-->
+     
     <!--Cuerpo-->
     <section id="services">
         <div class="container">
@@ -39,13 +40,13 @@
             <div class="text-center our-services">
             <div class="row">
                 <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                <div class="service-icon puntero" onclick="self.location.href = 'diligencia.php';">
-                    <i class="fa"><img src="{% static 'images/diligencia.png' %}"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Diligencia</h3>
-                    <p>Entregamos y solicitamos documentos en cualquier parte del país de manera oportuna y segura. No hay lugar a donde no podamos llegar.</p>
-                </div>
+                    <div class="service-icon puntero" onclick="self.location.href = 'diligencia.php';">
+                        <i class="fa"><img src="{% static 'images/diligencia.png' %}"></i>
+                    </div>
+                    <div class="service-info">
+                        <h3>Diligencia</h3>
+                        <p>Entregamos y solicitamos documentos en cualquier parte del país de manera oportuna y segura. No hay lugar a donde no podamos llegar.</p>
+                    </div>
                 </div>
                 <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
                 <div class="service-icon puntero" onclick="self.location.href = 'validacion.php';">
@@ -99,6 +100,7 @@
         </div>
     </section>
     <!--/#services-->
+   
     <!--/#about-us-->
     <section id="about-us" class="parallax">
     <div class="container">
