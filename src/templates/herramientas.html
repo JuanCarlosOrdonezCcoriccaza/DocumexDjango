@@ -11,12 +11,11 @@
     <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
     <!--Plantilla-->
     <link href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'styles/animate.min.css' %}" rel="stylesheet"><!--Animacion?--> 
-    <link href="{% static 'styles/font-awesome.min.css' %}" rel="stylesheet"><!--flechas direccion y iconos F T M-->
     <link href="{% static 'styles/lightbox.css' %}" rel="stylesheet"><!--Cerrar -->
     <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
     <link id="css-preset" href="{% static 'styles/preset1.css' %}" rel="stylesheet">
     <link href="{% static 'styles/responsive.css' %}" rel="stylesheet"><!--Tamaños-->
+    <link href="{% static 'styles/herramientas.css' %}" rel="stylesheet"><!--Herramientas-->
     <title>Documex Herramientas</title>
 </head>
 <body>
@@ -24,6 +23,28 @@
     {% include 'menu.html' %}
     {% block menu%}
     {% endblock %}
+    <div style="content:'';height:95px;">
+    </div>
+    <div class="herramientas">
+        <div class="herramientas-panel">
+            <nav class="herramientas-panel-navegacion">
+                <ul>
+                    <li><a href="">Mis Documentos</a></li>
+                    <li><a href="">Documentos Enviados</a></li>
+                    <li><a href="">Documentos Recibidos</a></li>
+                    <li><a href="">Enviar</a></li>
+                    <li><a href="">Buscar mi Documento</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="herramientas-pizarra">
+            <p>hola</p>
+        </div>
+    
+    </div>
+    
+
+
     <section id="services">
         <div class="container">
             <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
