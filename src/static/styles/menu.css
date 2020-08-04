@@ -87,7 +87,7 @@
     opacity: 1;
 }
 
-@media only screen and (max-width: 1150px) {
+@media only screen and (max-width: 1220px) {
     .header__conteiner {
         margin: 0px 10px;
         padding: 0px 5px 20px;
