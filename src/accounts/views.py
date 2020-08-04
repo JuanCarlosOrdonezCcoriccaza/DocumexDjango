@@ -18,6 +18,25 @@ def login(request):
     else:
         return render(request,'loginUser.html')
 
+def loginAdmin(request):
+    if request.method=='POST':
+        username = request.POST['usuario']
+        password = request.POST['password']
+        credenciales = request.POST['credenciales']
+        if credenciales == password :
+            #mi no entender el error reparalo
+            usuario = accounts.authenticate(usuario=username,password=password)
+            if usuario is not None:
+                accounts.login(request,user)
+                return redirect("/")
+            else:
+                messages.info(request,'Datos no Inválidos')
+                return redirect('loginAdministrador')
+        else:
+            messages.info(request,'Credencial Inválidos')
+            return redirect('loginAdministrador')
+    else:
+        return render(request,'loginAdmin.html')
 
 def register(request):
     if request.method == "POST":
@@ -120,14 +139,18 @@ def loginUsuario(request):
     }
     return render(request,'loginUser.html',contexto)
 
+
+
 def crearAdministrador(request):
     #template para registrar administrar
     return render(request,'registerAdmin.html')
 
+
 def loginAdministrador(request):
+
     administrador = Administrador.objects.all()
     contexto = {
-        "user" : administrador.nombre,
+        "usuario" : administrador.usuario,
         "password" : administrador.password
-    }
-    return render(request,'loginAdmin.html')
+    }    
+    return render(request,'loginAdmin.html',contexto)

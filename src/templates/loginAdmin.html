@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
-        <title>Documex Login Usuario</title>
+        <title>Documex Login Administrador</title>
         <link rel="stylesheet" type="text/css" href="{% static 'styles/estiloLU.css' %}">
         <script src="jquery-3.1.1.min.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
@@ -18,12 +18,14 @@
             </div>
             <div id="contenido">
                 <diV id="form">
-                    <h1>Ingreso de Usuarios</h1>
-                    <form action="login" method="post" id="form1">
+                    <h1>Ingreso de Administradores</h1>
+                    <form action="loginAdmin" method="post" id="form1">
                         {% csrf_token %}
                         <div id="user_pass">
                         <input type="text" name="usuario" id="usuario" maxlength="100" placeholder="Nombre de usuario">
                         <input type="password" name="password" id="password" placeholder="Contraseña">
+                        <label>Credenciales es igual a la Contraseña</label>
+                        <input type="password" name="credenciales" id="credenciales" placeholder="Credenciales">
                         </div>
                         <input type="submit" value="Ingresar" id="ingresar">
                     </form>
@@ -34,11 +36,11 @@
                     </div>
                 </div>
                 <div id="footer_div">
-                    <span>¿Eres nuevo? </span>
+                    <span>¿Eres nuevo Usuario? </span>
                     <a href="/accounts/registerUser" id="registro">Regístrate aquí</a>
                     <br>
-                    <span>¿Tienes Credenciales de Admin? </span>
-                    <a href="/accounts/loginAdmin" id="loginAdmin">Accede aquí</a>
+                    <span>¿No deberías estar aquí? </span>
+                    <a href="/" id="index">Regresar</a>
                 </div>
             </div>
             

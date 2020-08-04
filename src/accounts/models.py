@@ -42,7 +42,7 @@ class Administrador(models.Model):
     apellidos   = models.CharField(max_length = 100)
     correo      = models.EmailField(max_length = 100)
     dni         = models.IntegerField()
-    usuario     = usuario = models.CharField(max_length=100)
+    usuario     = models.CharField(max_length=100)
     password    = models.CharField(max_length = 100)
     estado      = models.BooleanField(default = False)
     fechaNacimiento = models.DateField()
