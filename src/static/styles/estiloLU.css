@@ -139,7 +139,7 @@
         background-color: #212529;
         transition: 0.4s;
     }
-    #registro{
+    #registro,#loginAdmin{
         text-decoration: none;
         color: #028fcc;
     }
@@ -230,7 +230,7 @@
         background-color: #212529;
         transition: 0.4s;
     }
-    #registro{
+    #registro,#loginAdmin{
         text-decoration: none;
         color: #028fcc;
     }
@@ -315,7 +315,7 @@
         background-color: #212529;
         transition: 0.4s;
     }
-    #registro{
+    #registro,#loginAdmin{
         text-decoration: none;
         color: #028fcc;
     }

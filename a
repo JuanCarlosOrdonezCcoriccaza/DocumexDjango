@@ -1,0 +1,84 @@
+*   [33m14e9eff[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m Merge branches 'master' and 'master' of https://github.com/JuanCarlosOrdonezCcoriccaza/DocumexDjango
+[31m|[m[32m\[m  
+[31m|[m * [33m0388190[m vista para listar usuarios
+[31m|[m * [33mad791ef[m crear usuario vista modificada
+[31m|[m * [33m4a14452[m url lista usuarios
+[31m|[m * [33mba174a3[m lista de usuarios
+* [32m|[m [33m85446c3[m repair model documento
+[32m|[m[32m/[m  
+* [33m1f911a7[m modelo documento
+* [33m8fd5570[m Creando modelo de Documento
+* [33m0ecccc1[m arregando iconos de subir y descargar
+* [33m2ae6a9c[m modificacion para cargar imagenes en el usuario
+* [33m9829fc9[m antes del Pillow
+* [33m8858f8d[m nuevas carpetas para almacenas los documentos
+* [33mf818d80[m view adaptado para el mis documentos
+* [33m7cceb84[m creando tabla de archivos
+* [33ma0694f9[m creacion de las cajas de herramientas
+* [33md35b0d5[m Creando campos de trabajo
+* [33mcc53e1b[m Crear las herramientas en el html
+* [33m0056c36[m Crear Herramientas
+* [33ma75468f[m Controles de admin
+* [33m3a9d393[m finish menu
+* [33m09e8013[m Arreglo del menu de opciones vista
+* [33mcfbecf0[m reparacion credenciales
+* [33md51cb2b[m Register complete
+*   [33m41106da[m Filtros a el Registro de Usuario
+[33m|[m[34m\[m  
+[33m|[m * [33m70c1382[m editar usuarios
+[33m|[m * [33med15360[m cambiando vision del modelo
+[33m|[m * [33m20e5115[m registro de usuario test
+[33m|[m * [33m82c4fce[m modelos de usuarios y administradores modificados
+[33m|[m * [33m85b8014[m estilos registro usuario provisional_1
+[33m|[m * [33mf0e4042[m estilos registro usuario provisional
+[33m|[m * [33m50a7300[m formulario campos correcciones
+[33m|[m * [33md50c39f[m estilos registro de usuario
+[33m|[m * [33mbc438bc[m formulario de registro de usuario
+[33m|[m * [33m4e44292[m fuentes de letras para los formularios
+[33m|[m * [33m06851f5[m estilos img mejorada
+[33m|[m * [33md74b4ba[m login usuario estilos tablet provisional
+[33m|[m * [33mb7d324a[m login usuario estilos ordenador provisional_1
+[33m|[m * [33m702fe9b[m login usuario estilos ordenador provisional
+[33m|[m * [33me377bdf[m login usuario estilos ordenador mejorado
+[33m|[m * [33m10db023[m login usuario estilos ordenador
+[33m|[m * [33m29df01b[m login usuario estilos moviles
+[33m|[m * [33m22af3a4[m estilo de inputs size en login usuario
+[33m|[m * [33mb34f9be[m estilo de inputs en login usuario
+[33m|[m * [33mca02244[m estilos del login usuarios mejorado
+[33m|[m * [33m572cb1f[m Login Usuarios label sustraidos
+[33m|[m * [33m20688ed[m estilos login usuarios
+[33m|[m * [33m46ee0b4[m registro.html
+[33m|[m * [33mfcb6bd5[m menu arreglo idioma
+[33m|[m * [33m1c6ff35[m Usuario campo sexo, direccion, dni, fechaNacimiento añadidos
+[33m|[m * [33mb0d44de[m Administrador campo fechaNacimiento añadido
+[33m|[m * [33m67057e8[m Administrador campos dni sexo direccion añadidos
+[33m|[m * [33m9bd1cce[m vista login administrador
+[33m|[m * [33mdfd18f7[m vista crear administrador
+[33m|[m * [33mca79577[m vista login usuario
+[33m|[m * [33m9529629[m vista crear usuario
+[33m|[m * [33mf434cad[m clase Administrador
+[33m|[m * [33m937076b[m clase usuario con campos provisionales
+[33m|[m * [33m9fd98f0[m clase usuario con clave primaria
+[33m|[m * [33me057ad1[m clase usuario
+* [34m|[m [33m8cd1613[m Version sostenible V1.5
+* [34m|[m [33mfb55ccf[m Main Css delete body-img
+[34m|[m[34m/[m  
+* [33m4d1e5c0[m ultimo V1.5
+* [33m8e6397f[m imagenes viñetas
+* [33m9b1aa10[m Cuerpo del  index
+* [33m4d1cc6f[m control menu login desplegable
+* [33mc9a49bc[m login & logout check
+* [33m2931004[m conectar accounts con login
+* [33m8b3de02[m Crear accounts y agregar opciones al menu
+* [33mb698ece[m html de MENU independiente
+* [33m06193c5[m V1.0.3 menu complete1
+* [33m1dfe412[m LU - estructura mejorada
+* [33m6e22c94[m LU - estructuracion
+* [33mbe68d27[m LU - clases css
+* [33m867b34c[m LU - campos usuario & contraseña
+* [33m88dbc64[m creando el login Usuario
+* [33m65886f9[m edicion README.md
+* [33md9a30be[m Derechos Reservados
+* [33mbc4a332[m V1.0.2index_menu
+* [33m008d6f3[m v1INDEX
+* [33m795dd02[m V1.1 Presentacion Documex
