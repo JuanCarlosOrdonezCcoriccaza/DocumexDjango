@@ -114,7 +114,17 @@ def crearUsuario(request):
                 if fechaNacimiento=='' or direccion=='' or sexo=='':
                     usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=null,sexo=null,direccion=null,estado=True,imagen=imagen)
                 else:    
-                    usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=fechaNacimiento,sexo=sexo,direccion=direccion,estado=True,imagen=imagen)
+                    usuario=Usuario.objects.create(
+                        nombres=nombres,
+                        apellidos=apellidos,
+                        correo=correo,dni=dni,
+                        usuario=usuario,
+                        password=password,
+                        fechaNacimiento=fechaNacimiento,
+                        sexo=sexo,
+                        direccion=direccion,
+                        estado=True,
+                        imagen=imagen)
                 usuario.save()
                 messages.info(request,'Usuario creado exitosamente')
                 print('Usuario Creado con exito')
@@ -131,6 +141,12 @@ def editarUsuario(request,id):
     #usuario = Usuario.objects.get(id = id)
     #if request.method == 'GET':
         
+def listarUsuarios(request):
+    usuarios = Usuario.objects.all()
+    contexto ={
+        'usuarios' : usuarios
+    }
+    return render(request,'listarUsers.html',contexto)       
 
 def loginUsuario(request):
     usuario = Usuario.objects.all()

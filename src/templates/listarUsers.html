@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <link rel="icon" type="image/png" href="{% static 'images/favicon.ico'%}">
+        <title>Documex Lista Usuario</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'styles/estilo.css' %}">
+        <script src="jquery-3.1.1.min.js"></script>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
+        <link rel="icon" type="image/png" href="#">
+        
+    </head>
+    <body>
+        <div id="main">        
+            <div id="logog">
+                <a href="/"><img src="{% static 'images/documex.png' %}"></a>
+            </div>  
+            
+            <div id="contenido">
+                <h1>Lista de Usuarios</h1>
+                <table border=2>
+                    <thead>
+                        <tr>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Correo</th>
+                            <th>Dni</th>
+                            <th>Usuario</th>
+                            <th>contraseña</th>
+                            <th>Fecha Nac.</th>
+                            <th>Sexo</th>
+                            <th>Dirección</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{usuario.nombres}}</td>
+                            <td>{{usuario.apellidos}}</td>
+                            <td>{{usuario.correo}}</td>
+                            <td>{{usuario.dni}}</td>
+                            <td>{{usuario.usuario}}</td>
+                            <td>{{usuario.password}}</td>
+                            <td>{{usuario.fechanacimiento}}</td>
+                            <td>{{usuario.sexo}}</td>
+                            <td>{{usuario.direccion}}</td>
+                        </tr>    
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+        <script src="#" type="#"></script>
+    </body>
+</html>
