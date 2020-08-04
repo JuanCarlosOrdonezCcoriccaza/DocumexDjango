@@ -1,21 +1,49 @@
 .herramientas{
     background-color: black;
-    display: inline;
+    display: inline-flex;
+    width: 100vw;
+    text-align: center;
+    align-items: center;
 }
-
 .herramientas-panel{
-    background-color: aliceblue;
+    background-color: salmon;
     padding: 50px;
+    height: 90vh;
+    width: 250px;
     margin: 10px;
-    height: 100vh;
-    width: 500px;
+    border-radius: 10px;
 }
 .herramientas-panel-navegacion{
-    background-color: blueviolet;
-
+    background-color: #000;
+    margin: 5px;
+    padding: 5px;
 }
+.navegacion__menu{
+    list-style: none;
+    padding: 0;
+}
+.navegacion__menu li {
+    border: 1px solid #fff;
+    margin: 3px 2px;
+    padding: 2px 1px;
+    border-radius: 5px;
+}    
+.navegacion__menu li a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.navegacion__menu li:hover{
+    background-color: grey;
+}
+
 .herramientas-pizarra{
-    
+    background-color: #aa2222;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px; 
+    width: 73vw;  
+    color: white;
+    height: 90vh;
 }
 
 
