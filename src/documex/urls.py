@@ -5,5 +5,6 @@ urlpatterns = [
     path("",views.index, name="index"),
     path("herramienta",views.herramienta, name="herramienta"),
     path("misDocumentos",views.misDocumentos, name="misDocumentos"),
+    path("formSubir",views.formSubir, name="formSubir"),
 ]
 

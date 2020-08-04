@@ -11,3 +11,8 @@ def herramienta(request):
 def misDocumentos(request):
     return render(request,"herramientas/misDocumentos.html")
 
+def formSubir(request):
+    return render(request,"herramientas/formSubir.html")
+
+def nuevoDocumento(request):
+    pass
