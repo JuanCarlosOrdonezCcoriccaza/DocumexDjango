@@ -5,5 +5,8 @@ from django.http import HttpResponse
 def index(request):
     return render(request,"index.html")
     
-def herramientas(request):
-    return render(request,"herramientas.html")
+def herramienta(request):
+    return render(request,"herramienta.html")
+
+def misDocumentos(request):
+    return render(request,"herramientas/misDocumentos.html")

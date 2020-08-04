@@ -16,6 +16,7 @@
     <link id="css-preset" href="{% static 'styles/preset1.css' %}" rel="stylesheet">
     <link href="{% static 'styles/responsive.css' %}" rel="stylesheet"><!--Tamaños-->
     <link href="{% static 'styles/herramientas.css' %}" rel="stylesheet"><!--Herramientas-->
+    <link href="{% static 'styles/misDocumentos.css' %}" rel="stylesheet"><!--misDocumentos-->
     <title>Documex Herramientas</title>
 </head>
 <body>
@@ -29,7 +30,7 @@
         <div class="herramientas-panel">
             <nav class="herramientas-panel-navegacion">
                 <ul class="navegacion__menu">
-                    <li><a href="#">Mis Documentos</a></li>
+                    <li><a href="misDocumentos">Mis Documentos</a></li>
                     <li><a href="#">Documentos Enviados</a></li>
                     <li><a href="#">Documentos Recibidos</a></li>
                     <li><a href="#">Enviar</a></li>
@@ -39,7 +40,9 @@
         </div>
         <div class="herramientas-pizarra">
             <p>hola se supone que aca aparece lo del menu derecho pero cada uno tiene sus propios html</p>
-            
+            {% include 'herramientas/misDocumentos.html' %}
+            {% block misDocumentos %}
+            {% endblock %}
         </div>
     
     </div>
