@@ -6,15 +6,15 @@ from .models import Usuario, Administrador
 
 def login(request):
     if request.method=='POST':
-        usuario = request.POST['usuario']
+        username = request.POST['usuario']
         password = request.POST['password']
-        user = auth.authenticate(usuario=usuario,password=password)
+        user = auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
             return redirect("/")
         else:
-            messages.info(request,'Invalid credentials')
-            return redirect('login')              
+            messages.info(request,'Credenciales Inválidos')
+            return redirect('loginUsuario')              
     else:
         return render(request,'loginUser.html')
 
