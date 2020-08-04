@@ -1,0 +1,3 @@
+Aqui se guardan:
+fotos/ las imagenes almacenas de las fotos de perfil de los usuarios y administradores
+documentos/ los documentos que se suben a la base de datos segun el tipo.
