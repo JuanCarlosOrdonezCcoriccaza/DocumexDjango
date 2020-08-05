@@ -6,5 +6,6 @@ urlpatterns = [
     path("herramienta",views.herramienta, name="herramienta"),
     path("misDocumentos",views.misDocumentos, name="misDocumentos"),
     path("formSubir",views.formSubir, name="formSubir"),
+    path("nuevoDocumento",views.nuevoDocumento, name="nuevoDocumento"),
 ]
 
