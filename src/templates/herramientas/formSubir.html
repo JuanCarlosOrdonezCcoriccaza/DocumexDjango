@@ -1,5 +1,6 @@
 <div class="formsubir">
-    <form class="form" action="nuevoDocumento" enctype="multipart/form-data">
+    <form class="form" action="formSubir" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
         <div class="table100">
             <table>
                 <thead>
@@ -33,6 +34,10 @@
                     </tr>
                 </tbody>
             </table>
+            {% for message in messages %}
+                <h3> {{message}}</h3>
+            {% endfor %}
+            </h3>
         </div>
     </form>
 </div>
