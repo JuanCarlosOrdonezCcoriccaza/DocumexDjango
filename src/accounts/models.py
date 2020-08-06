@@ -26,6 +26,7 @@ class Usuario(models.Model):
     apellidos   = models.CharField(max_length = 100)
     correo      = models.EmailField(max_length = 100)
     dni         = models.IntegerField()
+    #foringkey
     usuario     = models.CharField(max_length=100)
     password    = models.CharField(max_length = 100)
     fechaNacimiento = models.DateField(null=False)
@@ -33,6 +34,7 @@ class Usuario(models.Model):
     direccion   = models.CharField(max_length=100,null=False)
     estado      = models.BooleanField(default=False)
     imagen      = models.ImageField(upload_to="foto-Usuario" , null = True)
+    
     def __str__(self):
         return self.usuario
     class Meta:
@@ -52,6 +54,7 @@ class Administrador(models.Model):
     sexo        = models.CharField(max_length=1)
     direccion   = models.CharField(max_length=100)
     imagen      = models.ImageField(upload_to="foto-Administrador" , null=True)
+    
     def __str__(self):
         return self.usuario
     class Meta:

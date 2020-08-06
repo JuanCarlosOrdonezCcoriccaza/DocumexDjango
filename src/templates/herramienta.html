@@ -1,4 +1,5 @@
 {%load static%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,6 +45,9 @@
                     <li><a href="#">Documentos Recibidos</a></li>
                     <li><a href="#">Enviar</a></li>
                     <li><a href="#">Buscar mi Documento</a></li>
+                    {% if user.is_superuser %}
+                    <li><a href="accounts/listarUser">Listar Usuarios</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         </div>
