@@ -19,7 +19,7 @@
             
             <div id="contenido">
                 <diV id="form">
-                    <h1>Registro de Usuario</h1>
+                    <h1>{% block titulo %}Registro de Usuario{% endblock titulo%}</h1>
                     <form method="post" id="form1" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div id="user_pass">
@@ -34,7 +34,7 @@
                             <input type="text" name="direccion" id="direccion" maxlength="100" placeholder="Dirección" value="{%block direccion%}{%endblock direccion%}">
                             <input type="file" name="imagen" id="imagen" placeholder="Imagen">
                         </div>
-                        <input type="submit" value="Registrar" id="ingresar">
+                        <input type="submit" value="{% block editar %}Registrar{% endblock editar %}" id="ingresar">
                     </form>
                     <div id="respuesta" style="text-align: center;">
                         {% for message in messages %}
