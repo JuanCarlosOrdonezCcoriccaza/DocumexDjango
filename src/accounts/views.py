@@ -169,6 +169,11 @@ def editarUsuario(request,id):
         return redirect('listarUser')
     return render(request,'editarUser.html',{'usuario':usuario}) 
 
+def eliminarUsuario(request,id):
+    usuario = Usuario.objects.get(id=id)
+    usuario.delete()
+    return redirect('listarUser')
+
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()
     contexto ={
