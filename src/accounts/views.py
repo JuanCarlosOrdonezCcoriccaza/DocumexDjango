@@ -153,16 +153,57 @@ def crearUsuario(request):
     return render(request,'registerUser.html')
 
 def editarUsuario(request,id):
-    pass
-    #usuario = Usuario.objects.get(id = id)
-    #if request.method == 'GET':
+    usuario = Usuario.objects.get(id=id)
+    if(request.method == 'GET'):
+        print("entro get")
+        print(usuario.nombres)
+        return render(request,'editarUser.html',{'usuario':usuario})
+    elif(request.method == 'POST'):
+        print("entro post")
+
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        usuariom = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+        usuario.nombres=nombres
         
+        usuario.apellidos=apellidos
+        usuario.correo=correo
+        usuario.dni=dni
+        usuario.usuario=usuariom
+        usuario.password=password
+        usuario.fechaNacimiento=fechaNacimiento
+        usuario.sexo=sexo
+        usuario.direccion=direccion
+        usuario.save()
+        
+        return redirect('listarUser')
+    return render(request,'editarUser.html',{'usuario':usuario}) 
+
+def eliminarUsuario(request,id):
+    usuario = Usuario.objects.get(id=id)
+    usuario.delete()
+    return redirect('listarUser')
+
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()
     contexto ={
         'usuarios' : usuarios
     }
     return render(request,'listarUsers.html',contexto)       
+
+def listarUsuarios(request):
+    usuarios = Usuario.objects.all()
+    contexto ={
+        'usuarios' : usuarios
+    }
+    return render(request,'listarUsers.html',contexto)       
+
 
 def loginUsuario(request):
     usuario = Usuario.objects.all()
