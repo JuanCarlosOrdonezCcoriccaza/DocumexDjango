@@ -23,16 +23,16 @@
                     <form method="post" id="form1" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div id="user_pass">
-                            <input type="text" name="nombres" id="nombres" maxlength="100" placeholder="Nombres">
-                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos">
-                            <input type="email" name="correo" id="correo" maxlength="100" placeholder="Correo electrónico">
-                            <input type="text" name="dni" id="dni" maxlength="8" placeholder="DNI">
-                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario">
-                            <input type="password" name="password" id="password" placeholder="Contraseña">
-                            <input type="date" name="fnacimiento" id="fnacimiento" placeholder="Fecha de nacimiento">
-                            <input type="text" name="sexo" id="sexo" placeholder="Sexo (M o F)">
-                            <input type="text" name="direccion" id="direccion" placeholder="Dirección">
-                            <input type="file" name="imagen" id="imagen" placeholder="Imagen" >
+                            <input type="text" name="nombres" id="nombres" maxlength="100" placeholder="Nombres" value="{%block nombres%}{%endblock nombres%}">
+                            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos" value="{%block apellidos%}{%endblock apellidos%}">
+                            <input type="email" name="correo" id="correo" maxlength="100" placeholder="Correo electrónico" value="{%block correo%}{%endblock correo%}">
+                            <input type="text" name="dni" id="dni" maxlength="8" placeholder="DNI" value="{%block dni%}{%endblock dni%}">
+                            <input type="text" name="usuario" id="usuario" placeholder="Nombre de Usuario" value="{%block usuario%}{%endblock usuario%}">
+                            <input type="password" name="password" id="password" placeholder="Contraseña" value="{%block password%}{%endblock password%}">
+                            <input type="date" name="fnacimiento" id="fnacimiento" placeholder="Fecha de nacimiento" value="{%block fnacimiento%}{%endblock fnacimiento%}">
+                            <input type="text" name="sexo" id="sexo" placeholder="Sexo (M o F)" value="{%block sexo%}{%endblock sexo%}">
+                            <input type="text" name="direccion" id="direccion" placeholder="Dirección" value="{%block direccion%}{%endblock direccion%}">
+                            <input type="file" name="imagen" id="imagen" placeholder="Imagen">
                         </div>
                         <input type="submit" value="Registrar" id="ingresar">
                     </form>
