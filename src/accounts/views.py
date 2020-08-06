@@ -137,10 +137,12 @@ def crearUsuario(request):
     return render(request,'registerUser.html')
 
 def editarUsuario(request,id):
-    pass
-    #usuario = Usuario.objects.get(id = id)
-    #if request.method == 'GET':
-        
+    usuario = Usuario.objects.get(id=id)
+    if(request.method == 'GET'):
+        print("entro get")
+        print(usuario.nombres)
+        return render(request,'editarUser.html',{'usuario':usuario})
+      
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()
     contexto ={
