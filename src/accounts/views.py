@@ -141,6 +141,12 @@ def editarUsuario(request,id):
     #usuario = Usuario.objects.get(id = id)
     #if request.method == 'GET':
         
+def listarUsuarios(request):
+    usuarios = Usuario.objects.all()
+    contexto ={
+        'usuarios' : usuarios
+    }
+    return render(request,'listarUsers.html',contexto)       
 
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()
