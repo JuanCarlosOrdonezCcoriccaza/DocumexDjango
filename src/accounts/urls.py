@@ -9,7 +9,9 @@ urlpatterns = [
     path("loginAdmin",views.loginAdmin,name="loginAdmin"),
     path("logout",views.logout,name='logout'),
     path("registerUser",views.crearUsuario,name="registerUser"),
-    path("listarUser",views.listarUsuarios,name="listarUser")
+    path("listarUser",views.listarUsuarios,name="listarUser"),
+    path("editarUser/<int:id>/",views.editarUsuario,name="editarUser"),
+    path("eliminarUser/<int:id>/",views.eliminarUsuario,name="eliminarUser")  
 ]
 
 if settings.DEBUG:
