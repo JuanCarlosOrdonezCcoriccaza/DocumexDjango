@@ -31,6 +31,8 @@
                             <th>Fecha Nac.</th>
                             <th>Sexo</th>
                             <th>Dirección</th>
+                            <th>estado</th>
+                            <th>imagen</th>
                             <th>opcion</th>
                         </tr>
                     </thead>
@@ -46,6 +48,8 @@
                             <td>{{usuario.fechanacimiento}}</td>
                             <td>{{usuario.sexo}}</td>
                             <td>{{usuario.direccion}}</td>
+                            <td>{{usuario.estado}}</td>
+                            <td>{{usuario.imagen}}</td>
                             <td><a href="{%url 'editarUser' usuario.id %}">editar</a> <a href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
                         </tr>    
                         {% endfor %}
