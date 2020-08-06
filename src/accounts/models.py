@@ -35,7 +35,9 @@ class Usuario(models.Model):
     imagen      = models.ImageField(upload_to="foto-Usuario" , null = True)
     def __str__(self):
         return self.usuario
-    
+    class Meta:
+        verbose_name='Usuario'
+        verbose_name_plural='Usuarios'
 
 class Administrador(models.Model):
     id          = models.AutoField(primary_key= True)
@@ -52,3 +54,6 @@ class Administrador(models.Model):
     imagen      = models.ImageField(upload_to="foto-Administrador" , null=True)
     def __str__(self):
         return self.usuario
+    class Meta:
+        verbose_name='Administrador'
+        verbose_name_plural='Administradores'

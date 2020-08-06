@@ -18,6 +18,22 @@ def login(request):
     else:
         return render(request,'loginUser.html')
 
+def loginUser(request):
+    if request.method=='POST':
+        usuario  = request.POST['usuario']
+        password = request.POST['password']
+        if Usuario.objects.authenticate(usuario=usuario,password=password)
+        
+            if user is not None:
+                Usuario.objects.login(request,user)
+                return redirect("/")
+            else:
+                messages.info(request,'Credenciales Inválidos')
+                return redirect('loginUser')              
+    else:
+        return render(request,'loginUser.html')
+
+
 def loginAdmin(request):
     if request.method=='POST':
         username = request.POST['usuario']
@@ -37,7 +53,7 @@ def loginAdmin(request):
             return redirect('loginAdministrador')
     else:
         return render(request,'loginAdmin.html')
-
+#este register solo esta de ejemplo no se le esta dando uso aparente
 def register(request):
     if request.method == "POST":
         first_name = request.POST['first_name']

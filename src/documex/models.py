@@ -12,3 +12,10 @@ class Documento (models.Model):
     enviado      = models.BooleanField(default=False)     
     recibido     = models.BooleanField(default=False)
     costo        = models.FloatField(default=9.9)
+
+    class Meta:
+        verbose_name='Documento'
+        verbose_name_plural='Documentos'
+        ordering=['id']
+    def __str__(self):
+        return self.id
