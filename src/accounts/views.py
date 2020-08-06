@@ -142,7 +142,33 @@ def editarUsuario(request,id):
         print("entro get")
         print(usuario.nombres)
         return render(request,'editarUser.html',{'usuario':usuario})
-      
+    elif(request.method == 'POST'):
+        print("entro post")
+
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        usuariom = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+        usuario.nombres=nombres
+        
+        usuario.apellidos=apellidos
+        usuario.correo=correo
+        usuario.dni=dni
+        usuario.usuario=usuariom
+        usuario.password=password
+        usuario.fechaNacimiento=fechaNacimiento
+        usuario.sexo=sexo
+        usuario.direccion=direccion
+        usuario.save()
+        
+        return redirect('listarUser')
+    return render(request,'editarUser.html',{'usuario':usuario}) 
+
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()
     contexto ={
