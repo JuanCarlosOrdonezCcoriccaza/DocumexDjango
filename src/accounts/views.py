@@ -32,9 +32,9 @@ def loginAdmin(request):
         credenciales = request.POST['credenciales']
         if credenciales == password :
             #mi no entender el error reparalo
-            usuario = accounts.authenticate(usuario=username,password=password)
-            if usuario is not None:
-                accounts.login(request,user)
+            admin = Administrador.authenticate(usuario=username,password=password)
+            if admin is not None:
+                Administrador.login(request,user)
                 return redirect("/")
             else:
                 messages.info(request,'Datos no Inválidos')

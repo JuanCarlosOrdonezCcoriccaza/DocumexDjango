@@ -17,7 +17,7 @@ class UsuarioManager(BaseUserManager):
         usuario.set_password(password)
         usuario.save()
         return usuario
-    """
+
     def create_superuser(self,username,correo,nombres,apellidos,dni,password):
         usuario = self.create_user(
             correo
@@ -30,7 +30,7 @@ class UsuarioManager(BaseUserManager):
         usuario.admin = True
         usuario.save()
         return usuario
-    """
+
 class Usuario(AbstractBaseUser):
     id          = models.AutoField(primary_key = True)
     username     = models.CharField('Nombre de Usuario',unique=True, max_length=100)
@@ -91,22 +91,22 @@ class AdministradorManager(BaseUserManager):
             ,nombres=nombres
             ,apellidos=apellidos
             ,dni=dni
-            ,clave=nombres[0:1]+apellidos[0:1]+(str)(dni)
         )
-        print("Tu clave es:"+clave)
+        #administrador.clave = administrador.nombres[:1]+administrador.apellidos[:1]+(str)(dni)
+        #print("clave es :" +administrador.clave)
         administrador.set_password(password)
         administrador.save()
-        return usuario    
+        return administrador    
 
 class Administrador(AbstractBaseUser):
     id          = models.AutoField(primary_key = True)
-    username     = models.CharField('Nombre de Usuario',unique=True, max_length=100)
+    username    = models.CharField('Nombre de Usuario',unique=True,default='administrador'+(str)(id), max_length=100)
     correo      = models.EmailField('Correo Electronico',unique=True,max_length=100)
     nombres     = models.CharField(max_length = 100)
     apellidos   = models.CharField(max_length = 100)
     dni         = models.IntegerField('DNI del Usuario',unique=True,blank=False)
-    clave       = models.CharField(max_length = 100)
     password    = models.CharField(max_length = 100)
+    seguridad   = models.CharField(max_length = 100)
     fechaNacimiento = models.DateField(default=date.today(),blank=True,null=False)
     sexo        = models.CharField(max_length=1,default='M',null=False)
     direccion   = models.CharField(max_length=100,blank=True,null=True)
@@ -114,11 +114,12 @@ class Administrador(AbstractBaseUser):
     admin       = models.BooleanField(default=True)
     imagen      = models.ImageField(upload_to="foto-Usuario",blank=True,null=True)
     objects     = AdministradorManager()
+
     USERNAME_FIELD='username'
-    REQUIRED_FIELDS=['correo','nombres','apellidos','dni','clave']
+    REQUIRED_FIELDS=['correo','nombres','apellidos','dni']
 
     def __str__(self):
-        return f'Usuario{self.username}'
+        return f'Administrador{self.username}'
     def has_perm(self,perm,obj = None):
         return True
     def has_module_perms(self,app_label):
