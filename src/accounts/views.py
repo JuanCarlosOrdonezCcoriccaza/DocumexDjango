@@ -2,6 +2,9 @@ from django.shortcuts import render , redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Usuario, Administrador
+#mixins
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, ListView , UpdateView , DeleteView , TemplateView
 # Create your views here.
 
 def login(request):
@@ -19,7 +22,8 @@ def login(request):
         return render(request,'loginUser.html')
 
 def loginUser(request):
-    pass
+    
+    return render(request,'loginUser.html')
 
 def loginAdmin(request):
     if request.method=='POST':
@@ -34,7 +38,7 @@ def loginAdmin(request):
                 return redirect("/")
             else:
                 messages.info(request,'Datos no Inválidos')
-                return redirect('loginAdministrador')
+                return redirect('loginUsuario')
         else:
             messages.info(request,'Credencial Inválidos')
             return redirect('loginAdministrador')

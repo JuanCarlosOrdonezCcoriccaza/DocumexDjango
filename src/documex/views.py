@@ -9,6 +9,7 @@ def index(request):
     return render(request,"index.html")
     
 def herramienta(request):
+    
     return render(request,"herramienta.html")
 
 def misDocumentos(request):
@@ -17,8 +18,9 @@ def misDocumentos(request):
     return render(request,"herramientas/misDocumentos.html",{'docs':docs})
 
 def nuevoDocumento(request):
-    #return render(request,"herramientas/formSubir.html")
-    pass
+    print("probando el login_request")
+    return render(request,"nuevoDocumento.html")
+    
 
 def formSubir(request):
     if request.method=='POST':

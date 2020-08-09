@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+#
+
 
 urlpatterns = [
     path("register",views.register, name="register"),
@@ -12,7 +14,7 @@ urlpatterns = [
     path("registerUser",views.crearUsuario,name="registerUser"),
     path("listarUser",views.listarUsuarios,name="listarUser"),
     path("editarUser/<int:id>/",views.editarUsuario,name="editarUser"),
-    path("eliminarUser/<int:id>/",views.eliminarUsuario,name="eliminarUser")  
+    path("eliminarUser/<int:id>/",views.eliminarUsuario,name="eliminarUser"),  
 ]
 
 if settings.DEBUG:
