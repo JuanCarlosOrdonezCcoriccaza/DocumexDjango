@@ -37,7 +37,7 @@
     #main{
         width:75vw;
         height:90vh;
-        min-height: 500px;
+        min-height: 700px;
         background-color:white;
         margin: 30px auto;
     }
@@ -149,7 +149,7 @@
     #main{
         width:90vw;
         height:90vh;
-        min-height: 650px;
+        min-height: 700px;
         background-color:white;
         margin: 30px auto;
     }
@@ -253,7 +253,7 @@
     #main{
         width:90vw;
         height:90vh;
-        min-height: 870px;
+        min-height: 950px;
         background-color:white;
         margin: 30px auto;
     }
