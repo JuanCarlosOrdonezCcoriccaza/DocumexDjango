@@ -161,8 +161,13 @@ def editarUsuario(request,id):
         fechaNacimiento = request.POST['fnacimiento']
         sexo = request.POST['sexo']
         direccion = request.POST['direccion']
+        if('imagen' in request.FILES):
+            imagen = request.FILES['imagen']
+            print(request.FILES['imagen'])
+            usuario.imagen=imagen
+        else:
+            print("No hay archivo")        
         usuario.nombres=nombres
-        
         usuario.apellidos=apellidos
         usuario.correo=correo
         usuario.dni=dni
@@ -187,14 +192,6 @@ def listarUsuarios(request):
         'usuarios' : usuarios
     }
     return render(request,'listarUsers.html',contexto)       
-
-def listarUsuarios(request):
-    usuarios = Usuario.objects.all()
-    contexto ={
-        'usuarios' : usuarios
-    }
-    return render(request,'listarUsers.html',contexto)       
-
 
 def loginUsuario(request):
     usuario = Usuario.objects.all()
