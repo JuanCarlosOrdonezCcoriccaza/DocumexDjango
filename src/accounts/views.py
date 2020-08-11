@@ -204,7 +204,65 @@ def loginUsuario(request):
 
 
 def crearAdministrador(request):
-    #template para registrar administrar
+    if request.method == 'POST':
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        usuario = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+        imagen = request.FILES['imagen']
+        #controladores
+        takemail:bool
+        takeuser:bool
+        takevacio:bool
+        if nombres=='' or apellidos=='' or correo=='' or dni=='':
+            messages.info(request,'Usuario no Creado.')
+            return redirect('registerUser')
+        else: 
+            if usuario=='' or password=='':
+                messages.info(request,'Debes crear un Usuario y una Contraseña.')
+                takevacio=False
+            else:
+                takevacio=True
+            if User.objects.filter(correo=correo).exists():        
+                messages.info(request,'Esta direccion de Email ya existe.')
+                takemail=False
+            else:
+                takemail=True
+            if User.objects.filter(usuario=usuario).exists():
+                messages.info(request,'Este usuario ya esta en uso.')
+                takeuser=False
+            else:
+                takeuser=True
+
+            if  takemail and takevacio and takeuser:
+                if fechaNacimiento=='' or direccion=='' or sexo=='':
+                    usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=null,sexo=null,direccion=null,estado=True,imagen=imagen)
+                else:    
+                    usuario=Usuario.objects.create(
+                        nombres=nombres,
+                        apellidos=apellidos,
+                        correo=correo,dni=dni,
+                        usuario=usuario,
+                        password=password,
+                        fechaNacimiento=fechaNacimiento,
+                        sexo=sexo,
+                        direccion=direccion,
+                        estado=True,
+                        imagen=imagen)
+                usuario.save()
+                messages.info(request,'Administrador creado exitosamente')
+                print('Administrador Creado con exito')
+                return redirect('loginAdmin')
+            else:
+                return redirect('registerAdmin')    
+            
+    else:
+        print("no se envio nada")
     return render(request,'registerAdmin.html')
 
 

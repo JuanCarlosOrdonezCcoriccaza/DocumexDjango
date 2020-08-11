@@ -14,7 +14,8 @@ urlpatterns = [
     path("registerUser",views.crearUsuario,name="registerUser"),
     path("listarUser",views.listarUsuarios,name="listarUser"),
     path("editarUser/<int:id>/",views.editarUsuario,name="editarUser"),
-    path("eliminarUser/<int:id>/",views.eliminarUsuario,name="eliminarUser"),  
+    path("eliminarUser/<int:id>/",views.eliminarUsuario,name="eliminarUser"),
+    path("registerAdmin",views.crearAdministrador,name="registerAdmin") 
 ]
 
 if settings.DEBUG:
