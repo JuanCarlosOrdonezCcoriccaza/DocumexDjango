@@ -39,7 +39,7 @@ class Usuario(AbstractBaseUser):
     apellidos   = models.CharField(max_length = 100)
     dni         = models.IntegerField('DNI del Usuario',unique=True,blank=False)
     password    = models.CharField(max_length = 100)
-    fechaNacimiento = models.DateField(default=date.today(),blank=True,null=False)
+    fechaNacimiento = models.DateField(blank=True,null=False)
     sexo        = models.CharField(max_length=1,default='M',null=False)
     direccion   = models.CharField(max_length=100,blank=True,null=True)
     estado      = models.BooleanField(default=True)
@@ -80,55 +80,3 @@ class Usuario(AbstractBaseUser):
 #    password     = models.CharField(min_length=8)    
 #    email        = models.EmailField(max_length=254)
 #    img          = models.ImageField(upload_to='pics',null=False)
-
-class AdministradorManager(BaseUserManager):
-    def create_superuser(self,correo,username,nombres,apellidos,password):
-        if not correo:
-            raise ValueError('El administrador debe tener un correo electronico')
-        administrador = self.model(
-            username=username
-            ,correo=self.normalize_email(correo)
-            ,nombres=nombres
-            ,apellidos=apellidos
-            ,dni=dni
-        )
-        #administrador.clave = administrador.nombres[:1]+administrador.apellidos[:1]+(str)(dni)
-        #print("clave es :" +administrador.clave)
-        administrador.set_password(password)
-        administrador.save()
-        return administrador    
-
-class Administrador(AbstractBaseUser):
-    id          = models.AutoField(primary_key = True)
-    username    = models.CharField('Nombre de Usuario',unique=True,default='administrador'+(str)(id), max_length=100)
-    correo      = models.EmailField('Correo Electronico',unique=True,max_length=100)
-    nombres     = models.CharField(max_length = 100)
-    apellidos   = models.CharField(max_length = 100)
-    dni         = models.IntegerField('DNI del Usuario',unique=True,blank=False)
-    password    = models.CharField(max_length = 100)
-    seguridad   = models.CharField(max_length = 100)
-    fechaNacimiento = models.DateField(default=date.today(),blank=True,null=False)
-    sexo        = models.CharField(max_length=1,default='M',null=False)
-    direccion   = models.CharField(max_length=100,blank=True,null=True)
-    estado      = models.BooleanField(default=True)
-    admin       = models.BooleanField(default=True)
-    imagen      = models.ImageField(upload_to="foto-Usuario",blank=True,null=True)
-    objects     = AdministradorManager()
-
-    USERNAME_FIELD='username'
-    REQUIRED_FIELDS=['correo','nombres','apellidos','dni']
-
-    def __str__(self):
-        return f'Administrador{self.username}'
-    def has_perm(self,perm,obj = None):
-        return True
-    def has_module_perms(self,app_label):
-        return True
-    @property
-    def is_staff(self):
-        return self.admin
-    class Meta:
-        verbose_name='Administrador'
-        verbose_name_plural='Administradores'
-    #def __str__(self):
-    #    return self.usuario

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
+	<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+		<LastAuthor>Bantotal-IB</LastAuthor>
+	</DocumentProperties>
+	<ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+		<ProtectStructure>False</ProtectStructure>
+		<ProtectWindows>False</ProtectWindows>
+	</ExcelWorkbook>
+	<Styles>
+		<Style ss:ID="s22">
+			<Font ss:FontName="Verdana" x:Family="Swiss" ss:Bold="1"/>
+		</Style>
+		<Style ss:ID="s24">
+			<Font ss:FontName="Verdana" x:Family="Swiss"/>
+		</Style>
+		<Style ss:ID="s23">
+			<Font ss:FontName="Verdana" x:Family="Swiss"/>
+			<NumberFormat ss:Format="Fixed"/>
+		</Style>
+		<Style ss:ID="s26">
+			<Alignment ss:Horizontal="Center" ss:Vertical="Justify"/>
+			<Font ss:FontName="Verdana" x:Family="Swiss" ss:Bold="1"/>
+			<NumberFormat ss:Format="@"/>
+			<Interior ss:Color="#C0C0C0" ss:Pattern="Solid"/>
+		</Style>
+	</Styles>
+	<Worksheet ss:Name=" ">
+		<Table ss:ExpandedColumnCount="6" ss:DefaultColumnWidth="60">
+			<Column ss:Width="130"/>
+			<Column ss:Width="160"/>
+			<Column ss:Width="110"/>
+			<Column ss:Width="110"/>
+			<Column ss:Width="110"/>
+			<Column ss:Width="110"/>
+			<Row ss:Height="30">
+				<Cell ss:Index="1" ss:StyleID="s22">
+					<Data ss:Type="String">Cuentas de Ahorro</Data>
+				</Cell>
+			</Row>
+			<Row/>
+			<Row>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Cuenta</Data>
+				</Cell>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Producto</Data>
+				</Cell>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Valores Depositados</Data>
+				</Cell>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Valores por Acreditar</Data>
+				</Cell>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Saldo</Data>
+				</Cell>
+				<Cell ss:StyleID="s26">
+					<Data ss:Type="String">Total</Data>
+				</Cell>
+			</Row>
+			<Row>
+				<Cell ss:StyleID="s24">
+					<Data ss:Type="String">00278460502100001001</Data>
+				</Cell>
+				<Cell ss:StyleID="s24">
+					<Data ss:Type="String">CUENTAS DE AHORROS</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">0.00</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">0.00</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">129.76</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">129.76</Data>
+				</Cell>
+			</Row>
+			<Row/>
+			<Row ss:AutoFitHeight="0" ss:Height="15">
+				<Cell ss:StyleID="s22">
+					<Data ss:Type="String">Saldo Total:</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">129.76</Data>
+				</Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0" ss:Height="15">
+				<Cell ss:StyleID="s22">
+					<Data ss:Type="String">Total Valores Depositados:</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">0.00</Data>
+				</Cell>
+			</Row>
+			<Row ss:AutoFitHeight="0" ss:Height="15">
+				<Cell ss:StyleID="s22">
+					<Data ss:Type="String">Total Valores por Acreditar:</Data>
+				</Cell>
+				<Cell ss:StyleID="s23">
+					<Data ss:Type="Number">0.00</Data>
+				</Cell>
+			</Row>
+		</Table>
+	</Worksheet>
+</Workbook>

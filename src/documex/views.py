@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Documento
-from accounts.models import Administrador,Usuario
+from accounts.models import Usuario
 # Create your views here.
 def index(request):
     return render(request,"index.html")
@@ -28,6 +28,7 @@ def formSubir(request):
         titulo=request.POST['titulo']
         descripcion=request.POST['descripcion']
         autor=request.user
+        #Usuario.username
         documento = Documento.objects.create(autor=autor,archivo=archivo,titulo=titulo,descripcion=descripcion)
         documento.save()
         print("archivo ",archivo)
