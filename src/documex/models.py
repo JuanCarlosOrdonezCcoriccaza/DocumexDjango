@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from accounts.models import Administrador,Usuario
+from accounts.models import Usuario
 # Create your models here.
 class Documento (models.Model):
     id           = models.AutoField(primary_key = True)

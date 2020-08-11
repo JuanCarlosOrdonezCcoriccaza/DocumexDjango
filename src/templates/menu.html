@@ -23,16 +23,22 @@
             
             <div class="header-rigth">
                 <ul class="menu">
-                    {% if user.is_authenticated %}
-                    <li><a class="mostrar" href="#">
-                        {% if user.is_superuser %}	
+                    {% if user.is_authenticated %}	
+                        {% if user.imagen %}	
+                        <img src="{{user.imagen.url}}" style="display:block;border-radius: 50px;opacity:.8;position:absolute;z-index:-1;width:auto;height:100%;"  alt="foto">
+                        {%else%}
+                        <img src="{% static 'images/FotoUser.png'%}" style="display:block;border-radius: 50px;opacity:.8;position:absolute;z-index:-1;width:auto;height:100%;"  alt="foto">
+                        {% endif %}    
+                    <li>
+                        <a class="mostrar" href="#">
+                        {% if user.admin %}	
                         Administrador: {{user.username}}
                         {%else%}
                         Usuario: {{user.username}}
                         {% endif %}
-                        </a>
+                        </a>    
                         <ul class="submenu">
-                            {% if user.is_superuser %}	
+                            {% if user.admin %}	
                             <li><a href="admin">Admin</a></li>
                             <li><a href="#">Centro de Administración</a></li>	    
                             {% else %}
@@ -52,6 +58,7 @@
                     </li>
                     {% endif %}
                 </ul>
+                
             </div>
             <div class="btn-column">
                 <button type="button" class="e" data-toggle="row-menu" data-target=".column-menu">

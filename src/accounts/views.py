@@ -1,7 +1,10 @@
 from django.shortcuts import render , redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Usuario, Administrador
+from .models import Usuario
+#mixins
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import CreateView, ListView , UpdateView , DeleteView , TemplateView
 # Create your views here.
 
 def login(request):
@@ -13,13 +16,14 @@ def login(request):
             auth.login(request,user)
             return redirect("/")
         else:
-            messages.info(request,'Credenciales Inválidos')
-            return redirect('loginUsuario')              
+            messages.info(request,'Credenciales Inválidos:')
+            return redirect('login')              
     else:
         return render(request,'loginUser.html')
 
 def loginUser(request):
-    pass
+    
+    return render(request,'loginUser.html')
 
 def loginAdmin(request):
     if request.method=='POST':
@@ -28,16 +32,16 @@ def loginAdmin(request):
         credenciales = request.POST['credenciales']
         if credenciales == password :
             #mi no entender el error reparalo
-            usuario = accounts.authenticate(usuario=username,password=password)
-            if usuario is not None:
-                accounts.login(request,user)
+            admin = auth.authenticate(username=username,password=password)
+            if admin is not None:
+                auth.login(request,admin)
                 return redirect("/")
             else:
                 messages.info(request,'Datos no Inválidos')
-                return redirect('loginAdministrador')
+                return redirect('loginAdmin')
         else:
             messages.info(request,'Credencial Inválidos')
-            return redirect('loginAdministrador')
+            return redirect('loginAdmin')
     else:
         return render(request,'loginAdmin.html')
 #este register solo esta de ejemplo no se le esta dando uso aparente
@@ -102,12 +106,12 @@ def crearUsuario(request):
                 takevacio=False
             else:
                 takevacio=True
-            if Usuario.objects.filter(correo=correo).exists():        
+            if User.objects.filter(correo=correo).exists():        
                 messages.info(request,'Esta direccion de Email ya existe.')
                 takemail=False
             else:
                 takemail=True
-            if Usuario.objects.filter(usuario=usuario).exists():
+            if User.objects.filter(usuario=usuario).exists():
                 messages.info(request,'Este usuario ya esta en uso.')
                 takeuser=False
             else:
@@ -163,7 +167,7 @@ def editarUsuario(request,id):
         usuario.correo=correo
         usuario.dni=dni
         usuario.usuario=usuariom
-        usuario.password=password
+        usuario.set_password(password)
         usuario.fechaNacimiento=fechaNacimiento
         usuario.sexo=sexo
         usuario.direccion=direccion
@@ -195,7 +199,7 @@ def listarUsuarios(request):
 def loginUsuario(request):
     usuario = Usuario.objects.all()
     contexto = {
-        "user" : usuario.nombre,
+        "username" : usuario.username,
         "password" : usuario.password
     }
     return render(request,'loginUser.html',contexto)

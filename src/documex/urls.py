@@ -1,4 +1,5 @@
 from django.urls import path
+#
 from . import views
 
 urlpatterns = [
@@ -6,6 +7,5 @@ urlpatterns = [
     path("herramienta",views.herramienta, name="herramienta"),
     path("misDocumentos",views.misDocumentos, name="misDocumentos"),
     path("formSubir",views.formSubir, name="formSubir"),
-    path("nuevoDocumento",views.nuevoDocumento, name="nuevoDocumento"),
+    path("nuevoDocumento",views.nuevoDocumento,name="Nuevo_Documento"),
 ]
-
