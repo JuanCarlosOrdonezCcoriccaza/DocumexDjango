@@ -7,7 +7,7 @@
 {%block dni%}{{usuario.dni}}{%endblock dni%}
 {%block usuario%}{{usuario.usuario}}{%endblock usuario%}
 {%block password%}{{usuario.password}}{%endblock password%}
-{%block fnacimiento%}{{usuario.fnacimiento%}{%endblock fnacimiento%}
+{%block fnacimiento%}{{usuario.fechaNacimiento|date:'Y-m-d'}}{%endblock fnacimiento%}
 {%block sexo%}{{usuario.sexo}}{%endblock sexo%}
 {%block direccion%}{{usuario.direccion}}{%endblock direccion%}
 
