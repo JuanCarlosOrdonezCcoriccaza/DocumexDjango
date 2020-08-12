@@ -38,20 +38,22 @@
                     </thead>
                     <tbody>
                         {% for usuario in usuarios %}
-                        <tr>
-                            <td>{{usuario.nombres}}</td>
-                            <td>{{usuario.apellidos}}</td>
-                            <td>{{usuario.correo}}</td>
-                            <td>{{usuario.dni}}</td>
-                            <td>{{usuario.username}}</td>
-                            <!--<td>{{usuario.password}}</td>-->
-                            <td>{{usuario.fechaNacimiento}}</td>
-                            <td>{{usuario.sexo}}</td>
-                            <td>{{usuario.direccion}}</td>
-                            <td>{{usuario.estado}}</td>
-                            <td>{{usuario.imagen}}</td>
-                            <td><a href="{%url 'editarUser' usuario.id %}">editar</a> <a href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
-                        </tr>    
+                        {% if not usuario.admin%}
+                            <tr>
+                                <td>{{usuario.nombres}}</td>
+                                <td>{{usuario.apellidos}}</td>
+                                <td>{{usuario.correo}}</td>
+                                <td>{{usuario.dni}}</td>
+                                <td>{{usuario.username}}</td>
+                                <!--<td>{{usuario.password}}</td>-->
+                                <td>{{usuario.fechaNacimiento}}</td>
+                                <td>{{usuario.sexo}}</td>
+                                <td>{{usuario.direccion}}</td>
+                                <td>{{usuario.estado}}</td>
+                                <td>{{usuario.imagen}}</td>
+                                <td><a href="{%url 'editarUser' usuario.id %}">editar</a> <a href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
+                            </tr>
+                        {% endif %}
                         {% endfor %}
                     </tbody>
                 </table>

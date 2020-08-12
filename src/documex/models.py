@@ -18,4 +18,4 @@ class Documento (models.Model):
         verbose_name_plural='Documentos'
         ordering=['id']
     def __str__(self):
-        return self.id
+        return self.titulo
