@@ -76,6 +76,7 @@ def register(request):
         return redirect('/')
     else:
         return render(request,'register.html')
+#solo base ejemplo
 
 def logout (request):
     auth.logout(request)
@@ -87,7 +88,7 @@ def crearUsuario(request):
         apellidos = request.POST['apellidos']
         correo = request.POST['correo']
         dni = request.POST['dni']
-        usuario = request.POST['usuario']
+        username = request.POST['usuario']
         password = request.POST['password']
         fechaNacimiento = request.POST['fnacimiento']
         sexo = request.POST['sexo']
@@ -96,52 +97,42 @@ def crearUsuario(request):
         #controladores
         takemail:bool
         takeuser:bool
-        takevacio:bool
-        if nombres=='' or apellidos=='' or correo=='' or dni=='':
-            messages.info(request,'Usuario no Creado.')
-            return redirect('registerUser')
-        else: 
-            if usuario=='' or password=='':
-                messages.info(request,'Debes crear un Usuario y una Contraseña.')
-                takevacio=False
-            else:
-                takevacio=True
-            if User.objects.filter(correo=correo).exists():        
-                messages.info(request,'Esta direccion de Email ya existe.')
-                takemail=False
-            else:
-                takemail=True
-            if User.objects.filter(usuario=usuario).exists():
-                messages.info(request,'Este usuario ya esta en uso.')
-                takeuser=False
-            else:
-                takeuser=True
+        if Usuario.objects.filter(correo=correo).exists():        
+            messages.info(request,'Esta direccion de Email ya existe.')
+            takemail=False
+        else:
+            takemail=True
+        if Usuario.objects.filter(username=username).exists():
+            messages.info(request,'Este usuario ya esta en uso.')
+            takeuser=False
+        else:
+            takeuser=True
 
-            if  takemail and takevacio and takeuser:
-                if fechaNacimiento=='' or direccion=='' or sexo=='':
-                    usuario=Usuario.objects.create(nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,usuario=usuario,password=password,fechaNacimiento=null,sexo=null,direccion=null,estado=True,imagen=imagen)
-                else:    
-                    usuario=Usuario.objects.create(
-                        nombres=nombres,
-                        apellidos=apellidos,
-                        correo=correo,dni=dni,
-                        usuario=usuario,
-                        password=password,
-                        fechaNacimiento=fechaNacimiento,
-                        sexo=sexo,
-                        direccion=direccion,
-                        estado=True,
-                        imagen=imagen)
-                usuario.save()
-                messages.info(request,'Usuario creado exitosamente')
-                print('Usuario Creado con exito')
-                return redirect('loginUsuario')
-            else:
-                return redirect('registerUser')    
-            
+        if  takemail and takeuser:
+            usuario=Usuario.objects.create(
+                nombres=nombres,
+                apellidos=apellidos,
+                correo=correo,
+                dni=dni,
+                username=username,
+                password=password,
+                fechaNacimiento=fechaNacimiento,
+                sexo=sexo,
+                direccion=direccion,
+                estado=True,
+                admin=False,
+                imagen=imagen)
+            usuario.save()    
+            messages.info(request,'Usuario creado exitosamente')
+            return redirect('loginUsuario',{'usuario':usuario})
+        else:
+            messages.info(request,'No se puedo Guardar')
+            return redirect('registerUser')    
+        
     else:
         print("no se envio nada")
     return render(request,'registerUser.html')
+
 
 def editarUsuario(request,id):
     usuario = Usuario.objects.get(id=id)
