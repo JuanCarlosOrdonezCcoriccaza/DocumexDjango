@@ -23,6 +23,7 @@ def nuevoDocumento(request):
     
 
 def formSubir(request):
+    #usuario = Usuario.objects.get(id=id)
     if request.method=='POST':
         archivo=request.FILES['archivo']
         titulo=request.POST['titulo']
@@ -37,8 +38,7 @@ def formSubir(request):
         print("usuario",request.user)
         print("guardado")
         messages.info(request,'Documento guardado')
-        #docs=Documento.objects.all()
-        return redirect('/')
+        return render(request,"herramienta.html")
     else:
         return render(request,'herramientas/formSubir.html')
       

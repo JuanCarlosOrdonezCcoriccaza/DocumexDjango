@@ -202,7 +202,6 @@ def loginUsuario(request):
     return render(request,'loginUser.html',contexto)
 
 
-
 def crearAdministrador(request):
     if request.method == 'POST':
         nombres = request.POST['nombres']

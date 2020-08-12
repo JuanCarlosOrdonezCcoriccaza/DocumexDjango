@@ -52,7 +52,7 @@ class Usuario(AbstractBaseUser):
     REQUIRED_FIELDS=['correo','nombres','apellidos','dni']
 
     def __str__(self):
-        return f'Usuario{self.username}'
+        return f'{self.username}'
     def has_perm(self,perm,obj = None):
         return True
     def has_module_perms(self,app_label):
