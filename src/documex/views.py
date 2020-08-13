@@ -11,17 +11,22 @@ def index(request):
 def herramienta(request):
     
     return render(request,"herramienta.html")
-
-def misDocumentos(request):
-    usuario = Usuario.objects.get(id=id)
-
-    documentos = Documento.objects.all()
-    
+def allDocumentos(request):
+    docs = Documento.objects.all()
     return render(request,"herramientas/misDocumentos.html",{'docs':docs})
 
-def misDocumentos(request,id):
+def misDocumentos(request):
+    docs = Documento.objects.all()
+    author = request.user   
+    for doc in docs:
+        if doc.autor == author.username:
+            documentos+=doc 
+    print(author.username)
+    return render(request,"herramientas/misDocumentos.html",{'docs':documentos})
+
+def Documentos(request,id):
     usuario = Usuario.objects.get(id=id)
-    documentos = Documento.objects.all()
+    docs = Documento.objects.all()
     return render(request,"herramientas/misDocumentos.html",{'docs':docs,'usuario':usuario})
 
 def nuevoDocumento(request):

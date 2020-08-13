@@ -46,7 +46,6 @@
                             </thead>
                             <tbody>
                                 {% for doc in docs %}
-                                {% if  doc.autor is user.username %}
                                 <tr>
                                     <td class="column1">{{doc.autor}}</td>
                                     <td class="column2">{{doc.titulo}}</td>
@@ -72,7 +71,6 @@
                                     <td class="column8">algo</td>
                                     {% endif %}
                                 </tr>
-                                {% endif %}
                                 {% endfor %}
                             </tbody>
                         </table>

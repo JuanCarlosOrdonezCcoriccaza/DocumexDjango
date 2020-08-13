@@ -46,7 +46,7 @@
                             </thead>
                             <tbody>
                                 {% for doc in docs %}
-                                {% if  doc.autor is user.username %}
+                                {% if  doc.autor == usuario.username%}
                                 <tr>
                                     <td class="column1">{{doc.autor}}</td>
                                     <td class="column2">{{doc.titulo}}</td>
