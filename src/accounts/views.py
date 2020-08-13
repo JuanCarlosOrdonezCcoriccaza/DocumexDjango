@@ -26,24 +26,8 @@ def loginUser(request):
     return render(request,'loginUser.html')
 
 def loginAdmin(request):
-    if request.method=='POST':
-        username = request.POST['usuario']
-        password = request.POST['password']
-        credenciales = request.POST['credenciales']
-        if credenciales == password :
-            #mi no entender el error reparalo
-            admin = auth.authenticate(username=username,password=password)
-            if admin is not None:
-                auth.login(request,admin)
-                return redirect("/")
-            else:
-                messages.info(request,'Datos no Inválidos')
-                return redirect('loginAdmin')
-        else:
-            messages.info(request,'Credencial Inválidos')
-            return redirect('loginAdmin')
-    else:
-        return render(request,'loginAdmin.html')
+    
+    return render(request,'loginAdmin.html')
 #este register solo esta de ejemplo no se le esta dando uso aparente
 def register(request):
     if request.method == "POST":
@@ -93,8 +77,13 @@ def crearUsuario(request):
         fechaNacimiento = request.POST['fnacimiento']
         sexo = request.POST['sexo']
         direccion = request.POST['direccion']
-        imagen = request.FILES['imagen']
         #controladores
+        if('imagen' in request.FILES):
+            imagen = request.FILES['imagen']
+        else:
+            imagem = 'null'
+            print("No hay archivo") 
+
         takemail:bool
         takeuser:bool
         if Usuario.objects.filter(correo=correo).exists():        
@@ -109,7 +98,8 @@ def crearUsuario(request):
             takeuser=True
 
         if  takemail and takeuser:
-            usuario=Usuario.objects.create_user(
+            if 'imagen' in request.FILES:
+                usuario=Usuario.objects.create(
                 nombres=nombres,
                 apellidos=apellidos,
                 correo=correo,
@@ -122,15 +112,29 @@ def crearUsuario(request):
                 estado=True,
                 admin=False,
                 imagen=imagen)
+            else:
+                usuario=Usuario.objects.create(
+                nombres=nombres,
+                apellidos=apellidos,
+                correo=correo,
+                dni=dni,
+                username=username,
+                password=password,
+                fechaNacimiento=fechaNacimiento,
+                sexo=sexo,
+                direccion=direccion,
+                estado=True,
+                admin=False)
+            usuario.set_password(password)    
             usuario.save()    
             messages.info(request,'Usuario creado exitosamente')
-            return redirect('loginUsuario',{'usuario':usuario})
+            return redirect('loginUser')
         else:
             messages.info(request,'No se puedo Guardar')
             return redirect('registerUser')    
         
     else:
-        print("no se envio nada")
+        print("no se envio nada")     
     return render(request,'registerUser.html')
 
 def editarUsuario(request,id):
@@ -151,7 +155,7 @@ def editarUsuario(request,id):
         fechaNacimiento = request.POST['fnacimiento']
         sexo = request.POST['sexo']
         direccion = request.POST['direccion']
-        
+
         if('imagen' in request.FILES):
             imagen = request.FILES['imagen']
             print(request.FILES['imagen'])
@@ -201,3 +205,73 @@ def loginAdministrador(request):
         "password" : administrador.password
     }    
     return render(request,'loginAdmin.html',contexto)
+
+def crearAdministrador(request):
+    if request.method == 'POST':
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        username = request.POST['usuario']
+        password = request.POST['password']
+        fechaNacimiento = request.POST['fnacimiento']
+        sexo = request.POST['sexo']
+        direccion = request.POST['direccion']
+        #controladores
+        if('imagen' in request.FILES):
+            imagen = request.FILES['imagen']
+        else:
+            print("No hay archivo") 
+
+        takemail:bool
+        takeuser:bool
+        if Usuario.objects.filter(correo=correo).exists():        
+            messages.info(request,'Esta direccion de Email ya existe.')
+            takemail=False
+        else:
+            takemail=True
+        if Usuario.objects.filter(username=username).exists():
+            messages.info(request,'Este usuario ya esta en uso.')
+            takeuser=False
+        else:
+            takeuser=True
+
+        if  takemail and takeuser:
+            if 'imagen' in request.FILES:
+                usuario=Usuario.objects.create(
+                    nombres=nombres,
+                    apellidos=apellidos,
+                    correo=correo,
+                    dni=dni,
+                    username=username,
+                    password=password,
+                    fechaNacimiento=fechaNacimiento,
+                    sexo=sexo,
+                    direccion=direccion,
+                    estado=True,
+                    admin=True,
+                    imagen=imagen)
+            else:
+                usuario=Usuario.objects.create(
+                    nombres=nombres,
+                    apellidos=apellidos,
+                    correo=correo,
+                    dni=dni,
+                    username=username,
+                    password=password,
+                    fechaNacimiento=fechaNacimiento,
+                    sexo=sexo,
+                    direccion=direccion,
+                    estado=True,
+                    admin=True)
+            usuario.set_password(password)             
+            usuario.save()    
+            messages.info(request,'Administrador creado exitosamente')
+            return redirect('loginAdmin')
+        else:
+            messages.info(request,'No se puedo Guardar')
+            return redirect('registerAdmin')    
+        
+    else:
+        print("no se envio nada")     
+    return render(request,'registerAdmin.html')

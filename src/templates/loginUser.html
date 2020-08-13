@@ -22,8 +22,8 @@
                     <form action="login" method="post" id="form1">
                         {% csrf_token %}
                         <div id="user_pass">
-                        <input type="text" name="usuario" id="usuario" maxlength="100" placeholder="Nombre de usuario" value="{{usuario.username}}">
-                        <input type="password" name="password" id="password" placeholder="Contraseña" value="{{usuario.password}}">
+                        <input type="text" name="usuario" id="usuario" maxlength="100" placeholder="Nombre de usuario" required>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required>
                         </div>
                         <input type="submit" value="Ingresar" id="ingresar">
                     </form>
