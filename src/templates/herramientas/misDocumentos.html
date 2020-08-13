@@ -1,9 +1,4 @@
 {% load static %}
-<div>
-    <div id="logog">
-        <a href="/herramienta"><img src="{% static 'images/documex.png' %}"></a>
-    </div>  
-</div>
 <div class="misDocumentos" id="misDocumentos">
     <!--<nav class="operaciones" style="display: inline-block;">
         <ul class="operaciones__menu" >
@@ -22,7 +17,6 @@
             </div>
         </div>
         <!--Messages-->
-        <h3 style="color: black;">Actual :{{user.username}}</h3>
 	    <!-- Table -->
         <div class="limiter">
             <div class="container-table100">
@@ -64,7 +58,7 @@
                                         </svg>
                                         </a>
                                     </td>
-                                    {% if usuario.admin%}
+                                    {% if user.admin%}
                                     <td class="column6">{{doc.estado}}</td>
                                     <td class="column7">${{doc.costo}}</td>
                                     <td class="column8">algo</td>
@@ -89,10 +83,10 @@
                                         </svg>
                                         </a>
                                     </td>
-                                    {% if usuario.admin%}
+                                    {% if user.admin%}
                                     <td class="column6">{{doc.estado}}</td>
                                     <td class="column7">${{doc.costo}}</td>
-                                    <td class="column8">algo</td>
+                                    <td class="column8"><a href="{%url 'eliminarDoc' doc.id %}">eliminar</a></td>
                                     {% endif %}
                                 </tr>
                                 {% endifequal %}

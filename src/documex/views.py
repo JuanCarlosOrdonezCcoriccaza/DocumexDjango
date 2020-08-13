@@ -46,4 +46,8 @@ def formSubir(request):
     else:
         return render(request,'herramientas/formSubir.html')
       
+def eliminarDoc(request,id):
+    doc = Documento.objects.get(id=id)
+    doc.delete()
+    return redirect('herramienta')
 
