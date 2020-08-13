@@ -17,7 +17,7 @@
                 <a href="/herramienta"><img src="{% static 'images/documex.png' %}"></a>
             </div>  
             <div id="contenido">
-                <h1>Lista de Cuentas General</h1><h1 style="color: #A22;">Administradores</h1><h1 style="color: #5aaa6b;">Usuarios</h1>
+                <h1>Lista de Cuentas General</h1><h1 style="color: #028fcc;">Administradores</h1><h1 style="color: #000;">Usuarios</h1>
                 <table border=2>
                     <thead>
                         <tr>
@@ -40,9 +40,9 @@
                         {% for usuario in usuarios %}
                         {% if user.admin %}
                         {%if usuario.admin%}
-                            <tr style="background-color: #A22;color:#FFF">
+                            <tr style="background-color: #028fcc;color:#FFF">
                         {%else%}
-                            <tr style="background-color: #5aaa6b; color:#FF9">
+                            <tr style="background-color: #FFF;">
                         {%endif%}    
                                 <td>{{usuario.nombres}}</td>
                                 <td>{{usuario.apellidos}}</td>

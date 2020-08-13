@@ -1,12 +1,12 @@
 .herramientas{
-    background-color: black;
+    background-color: #028fcc;
     display: inline-flex;
     width: 100vw;
     text-align: center;
     align-items: center;
 }
 .herramientas-panel{
-    background-color: salmon;
+    background-color: #FFF;
     padding: 50px;
     height: 90vh;
     width: 250px;
@@ -14,7 +14,7 @@
     border-radius: 10px;
 }
 .herramientas-panel-navegacion{
-    background-color: #000;
+    background-color: #028fcc;
     margin: 5px;
     padding: 5px;
 }
@@ -37,12 +37,12 @@
 }
 
 .herramientas-pizarra{
-    background-color: #aa2222;
+    background-color: #FFF;
     border-radius: 10px;
     margin: 10px;
     padding: 5px; 
     width: 73vw;  
-    color: white;
+    color: #028fcc;
     height: 90vh;
 }
 

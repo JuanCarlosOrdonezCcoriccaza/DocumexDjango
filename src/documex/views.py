@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -42,7 +42,7 @@ def formSubir(request):
         print("usuario",request.user)
         print("guardado")
         messages.info(request,'Documento guardado')
-        return render(request,"herramienta.html")
+        return redirect('herramienta')
     else:
         return render(request,'herramientas/formSubir.html')
       
