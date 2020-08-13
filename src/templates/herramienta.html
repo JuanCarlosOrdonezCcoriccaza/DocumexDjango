@@ -22,6 +22,7 @@
 </head>
 <body>
     <!--Header-->
+        
     {% include 'menu.html' %}
     {% block menu%}
     {% endblock %}
@@ -45,9 +46,9 @@
                     <li><a href="#">Documentos Recibidos</a></li>
                     <li><a href="#">Enviar</a></li>
                     <li><a href="#">Buscar mi Documento</a></li>
-                    
+                    {% if usuario.admin %}
                     <li><a href="accounts/listarUser">Listar Usuarios</a></li>
-                    
+                    {% endif %}
                 </ul>
             </nav>
         </div>
@@ -59,82 +60,5 @@
         </div>
     
     </div>
-    
-
-
-    <section id="services">
-        <div class="container">
-            <div class="heading wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
-            <div class="row">
-                <div class="text-center col-sm-8 col-sm-offset-2">
-                <h2>Nuestros Servicios</h2>
-                <p>Documex es una empresa que desarrolla soluciones en la gestión y administración de sus documentos más importantes.</p>
-                </div>
-            </div> 
-            </div>
-            <div class="text-center our-services">
-            <div class="row">
-                <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
-                    <div class="service-icon puntero" onclick="self.location.href = 'diligencia.php';">
-                        <i class="fa"><img src="{% static 'images/diligencia.png' %}"></i>
-                    </div>
-                    <div class="service-info">
-                        <h3>Diligencia</h3>
-                        <p>Entregamos y solicitamos documentos en cualquier parte del país de manera oportuna y segura. No hay lugar a donde no podamos llegar.</p>
-                    </div>
-                </div>
-                <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="450ms">
-                <div class="service-icon puntero" onclick="self.location.href = 'validacion.php';">
-                    <i class="fa"><img src="{% static 'images/valida.png' %}"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Validación</h3>
-                    <p>Verificamos y autenticamos documentos de carácter público en todas y cada una de las instituciones el estado en el ámbito nacional.</p>
-                </div>
-                </div>
-                <div class="col-sm-4 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="550ms">
-                <div class="service-icon puntero" onclick="self.location.href = 'digitalizacion.php';">
-                    <i class="fa"><img src="{% static 'images/digitaliza.png' %}"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Digitalización</h3>
-                    <p>Convertimos tus documentos físicos en formato digital para que la información de tu empresa se encuentre a tu alcance en todo momento y lugar.</p>
-                </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="650ms">
-                <div class="service-icon puntero" onclick="self.location.href = 'resguardo.php';">
-                    <i class="fa"><img src="{% static 'images/resguardo.png' %}"></i>
-                </div>
-                <div class="service-info">
-                    <h3>Resguardo</h3>
-                    <p>Transportamos, almacenamos y custodiamos tu información liberándote de espacio y de carga laboral.</p>
-                </div>
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="750ms">
-                <!--<div class="service-icon">
-                    <i class="fa fa-bitbucket"></i>
-                </div>-->
-                <img src="{% static 'images/documex.png' %}" height="148">
-                <!--<div class="service-info">
-                    <h3>App Development</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
-                </div>-->
-                </div>
-                <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="850ms">
-                <!----><div class="service-icon puntero" onclick="self.location.href = 'certifica.php';">
-                    <i class="fa"><img src="{% static 'images/certifica.png' %}"></i>
-                </div>
-                
-                <div class="service-info">
-                    <h3>Certificación</h3>
-                    <p>Gestionamos la Certificación de firmas en copias certificadas de actas por parte de RENIEC garantizando la seguridad jurídica de estos documentos.</p>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-    
-  
 </body>
 </html>
