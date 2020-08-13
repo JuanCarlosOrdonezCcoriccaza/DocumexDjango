@@ -17,7 +17,7 @@
                 <a href="/herramienta"><img src="{% static 'images/documex.png' %}"></a>
             </div>  
             <div id="contenido">
-                <h1>Lista de Usuarios</h1>
+                <h1>Lista de Cuentas General</h1><h1 style="color: #A22;">Administradores</h1><h1 style="color: #5aaa6b;">Usuarios</h1>
                 <table border=2>
                     <thead>
                         <tr>
@@ -30,15 +30,20 @@
                             <th>Fecha Nac.</th>
                             <th>Sexo</th>
                             <th>Dirección</th>
-                            <th>estado</th>
-                            <th>imagen</th>
-                            <th>opcion</th>
+                            <th>Estado</th>
+                            <th>Perfil</th>
+                            <th>Opcion</th>
+                            <th>Archivos</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for usuario in usuarios %}
-                        {% if not usuario.admin%}
-                            <tr>
+                        {% if user.admin %}
+                        {%if usuario.admin%}
+                            <tr style="background-color: #A22;color:#FFF">
+                        {%else%}
+                            <tr style="background-color: #5aaa6b; color:#FF9">
+                        {%endif%}    
                                 <td>{{usuario.nombres}}</td>
                                 <td>{{usuario.apellidos}}</td>
                                 <td>{{usuario.correo}}</td>
@@ -51,8 +56,9 @@
                                 <td>{{usuario.estado}}</td>
                                 <td>{{usuario.imagen}}</td>
                                 <td><a href="{%url 'editarUser' usuario.id %}">editar</a> <a href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
+                                <td><a href="{%url 'misDocumentos' usuario.id %}">Ver Archivos</a></td>
                             </tr>
-                        {% endif %}
+                        {%endif%}    
                         {% endfor %}
                     </tbody>
                 </table>

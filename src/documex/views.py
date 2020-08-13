@@ -13,16 +13,23 @@ def herramienta(request):
     return render(request,"herramienta.html")
 
 def misDocumentos(request):
-    docs = Documento.objects.all() 
-    print(docs)
+    usuario = Usuario.objects.get(id=id)
+
+    documentos = Documento.objects.all()
+    
     return render(request,"herramientas/misDocumentos.html",{'docs':docs})
+
+def misDocumentos(request,id):
+    usuario = Usuario.objects.get(id=id)
+    documentos = Documento.objects.all()
+    return render(request,"herramientas/misDocumentos.html",{'docs':docs,'usuario':usuario})
 
 def nuevoDocumento(request):
     print("probando el login_request")
     return render(request,"nuevoDocumento.html")
     
 
-def formSubir(request):
+def formSubir(request,id):
     #usuario = Usuario.objects.get(id=id)
     if request.method=='POST':
         archivo=request.FILES['archivo']

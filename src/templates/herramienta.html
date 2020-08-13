@@ -22,7 +22,6 @@
 </head>
 <body>
     <!--Header-->
-        
     {% include 'menu.html' %}
     {% block menu%}
     {% endblock %}
@@ -31,6 +30,7 @@
     <div class="herramientas">
         <div class="herramientas-panel">
             <nav class="herramientas-panel-navegacion">
+                
                 <ul class="navegacion__menu">
                     <li><a href="misDocumentos">Mis Documentos</a>
                         <ul>
@@ -46,7 +46,7 @@
                     <li><a href="#">Documentos Recibidos</a></li>
                     <li><a href="#">Enviar</a></li>
                     <li><a href="#">Buscar mi Documento</a></li>
-                    {% if usuario.admin %}
+                    {% if user.admin %}
                     <li><a href="accounts/listarUser">Listar Usuarios</a></li>
                     {% endif %}
                 </ul>
