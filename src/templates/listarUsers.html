@@ -8,14 +8,10 @@
         <link rel="stylesheet" type="text/css" href="{% static 'styles/estilo.css' %}">
         <script src="jquery-3.1.1.min.js"></script>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximun-scale=1.0, minimun-scale=1.0">
-        <link rel="icon" type="image/png" href="#">
         
     </head>
     <body>
         <div id="main">        
-            <div id="logog">
-                <a href="/herramienta"><img src="{% static 'images/documex.png' %}"></a>
-            </div>  
             <div id="contenido">
                 <h1>Lista de Cuentas General</h1><h1 style="color: #028fcc;">Administradores</h1><h1 style="color: #000;">Usuarios</h1>
                 <table border=2>
@@ -53,10 +49,16 @@
                                 <td>{{usuario.fechaNacimiento}}</td>
                                 <td>{{usuario.sexo}}</td>
                                 <td>{{usuario.direccion}}</td>
-                                <td>{{usuario.estado}}</td>
+                                <td >{{usuario.estado}}</td>
                                 <td>{{usuario.imagen}}</td>
+                                
+                                {%if usuario.admin%}
+                                <td><a style="color:white" href="{%url 'editarUser' usuario.id %}">editar</a> <a style="color:white" href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
+                                <td><a style="color:white" id="Documentos" onclick="loadDocumentos()">Ver Archivos</a></td>    
+                                {%else%}
                                 <td><a href="{%url 'editarUser' usuario.id %}">editar</a> <a href="{%url 'eliminarUser' usuario.id %}">eliminar</a></td>
-                                <td><a href="{%url 'Documentos' usuario.id %}">Ver Archivos</a></td>
+                                <td><a id="Documentos" onclick="loadDocumentos()">Ver Archivos</a></td>
+                                {%endif%} 
                             </tr>
                         {%endif%}    
                         {% endfor %}

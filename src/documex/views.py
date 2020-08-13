@@ -13,13 +13,24 @@ def herramienta(request):
     return render(request,"herramienta.html")
 
 def misDocumentos(request):
+    usuario = request.user
+    print("user: "+usuario)
     docs = Documento.objects.all()
-    return render(request,"herramientas/misDocumentos.html",{'docs':docs})
+    context={
+        'docs':docs,
+        'usuario':usuario
+    }
+    return render(request,"herramientas/misDocumentos.html",context)
 
-def Documentos(request,id):
-    usuario = Usuario.objects.get(id=id)
+def Documentos(request):
+    usuarios = Usuario.objects.all()
     docs = Documento.objects.all()
-    return render(request,"herramientas/Documentos.html",{'docs':docs})
+    
+    context={
+        'docs':docs,
+        'usuarios':usuarios
+    }
+    return render(request,"herramientas/Documentos.html",context)
 
 def nuevoDocumento(request):
     print("probando el login_request")

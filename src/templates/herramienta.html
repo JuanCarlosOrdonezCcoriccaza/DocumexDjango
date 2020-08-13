@@ -44,7 +44,8 @@
                     <li><a href="#">Enviar</a></li>
                     <li><a href="#">Buscar mi Documento</a></li>
                     {% if user.admin %}
-                    <li><a href="accounts/listarUser">Listar Usuarios</a></li>
+                    <li><a id="listarUser" onclick="loadListarUser()">Listar Usuarios</a></li>
+                    <li><a id="Documentos" onclick="loadDocumentos()">Ver Archivos Generales</a></li>
                     {% endif %}
                 </ul>
             </nav>
