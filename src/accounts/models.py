@@ -4,7 +4,7 @@ from datetime import date,datetime
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 # Create your models here.
 class UsuarioManager(BaseUserManager):
-    def create_user(self,correo,username,nombres,apellidos,dni,password=None):
+    def create_user(self,correo,username,nombres,apellidos,dni,password):
         if not correo:
             raise ValueError('El usuario debe tener un correo electronico')
         usuario = self.model(

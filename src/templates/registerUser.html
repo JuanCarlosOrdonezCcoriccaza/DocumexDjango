@@ -33,6 +33,7 @@
                             <input type="text" name="sexo" id="sexo" maxlength="1" placeholder="Sexo (M o F)" value="{%block sexo%}{%endblock sexo%}" required>
                             <input type="text" name="direccion" id="direccion" maxlength="100" placeholder="Dirección" value="{%block direccion%}{%endblock direccion%}" required>
                             <input type="file" name="imagen" id="imagen" placeholder="Imagen">
+                            <input type="checkbox" name="admin" id="admin" style="display:none;" value="{%block admin%}{%endblock admin%}">
                         </div>
                         <input type="submit" value="{% block editar %}Registrar{% endblock editar %}" id="ingresar">
                     </form>

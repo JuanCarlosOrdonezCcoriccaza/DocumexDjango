@@ -1,14 +1,15 @@
 {% extends 'registerUser.html' %}
 {%block titulo %}Registrar Administrador{% endblock titulo%}
 
-{%block nombres%}{{usuario.nombres}}{%endblock nombres%}
-{%block apellidos%}{{usuario.apellidos}}{%endblock apellidos%}
-{%block correo%}{{usuario.correo}}{%endblock correo%}
-{%block dni%}{{usuario.dni}}{%endblock dni%}
-{%block usuario%}{{usuario.username}}{%endblock usuario%}
-{%block password%}{{usuario.password}}{%endblock password%}
-{%block fnacimiento%}{{usuario.fechaNacimiento|date:'Y-m-d'}}{%endblock fnacimiento%}
-{%block sexo%}{{usuario.sexo}}{%endblock sexo%}
-{%block direccion%}{{usuario.direccion}}{%endblock direccion%}
+{%block nombres%}{%endblock nombres%}
+{%block apellidos%}{%endblock apellidos%}
+{%block correo%}{%endblock correo%}
+{%block dni%}{%endblock dni%}
+{%block usuario%}{%endblock usuario%}
+{%block password%}{%endblock password%}
+{%block fnacimiento%}{%endblock fnacimiento%}
+{%block sexo%}{%endblock sexo%}
+{%block direccion%}{%endblock direccion%}
+{%block admin%}True{%endblock admin%}
 
 {%block editar %}Validar Cambios{%endblock editar%}
