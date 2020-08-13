@@ -11,18 +11,9 @@ def index(request):
 def herramienta(request):
     
     return render(request,"herramienta.html")
-def allDocumentos(request):
-    docs = Documento.objects.all()
-    return render(request,"herramientas/allDocumentos.html",{'docs':docs})
 
 def misDocumentos(request):
-    documentos = Documento.objects.all()
-    author = request.user
-    docs='null'   
-    for doc in documentos:
-        if doc.autor == author.username:
-            docs=docs+doc 
-    print(author.username)
+    docs = Documento.objects.all()
     return render(request,"herramientas/misDocumentos.html",{'docs':docs})
 
 def Documentos(request,id):
