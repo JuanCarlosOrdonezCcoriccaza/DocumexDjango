@@ -81,7 +81,9 @@ def formEnviar(request):
         correo = request.POST['correo']
         dni = request.POST['dni']
         direccion = request.POST['direccion']
-        documentos = request.POST['documentos']
+        documentos={
+            'docs':request.FILE['documentos']
+        }
         
     return render(request,"herramientas/Enviar.html",context)
     
