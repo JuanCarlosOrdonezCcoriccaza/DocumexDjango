@@ -32,6 +32,7 @@
 }
 .navegacion__menu li a{
     color:#FFF;
+    cursor: pointer;
 }
 
 .navegacion__menu li a:hover{

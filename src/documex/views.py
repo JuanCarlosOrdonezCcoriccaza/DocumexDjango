@@ -14,10 +14,11 @@ def herramienta(request):
 
 def misDocumentos(request):
     usuario = request.user
-    print("user: "+usuario)
-    docs = Documento.objects.all()
+    print(usuario)
+    documentos = Documento.objects.filter(autor=usuario)
+    print(documentos)
     context={
-        'docs':docs,
+        'docs':documentos,
         'usuario':usuario
     }
     return render(request,"herramientas/misDocumentos.html",context)
@@ -62,3 +63,13 @@ def eliminarDoc(request,id):
     doc.delete()
     return redirect('herramienta')
 
+def formEnviar(request):
+    usuario = request.user
+    print(usuario)
+    documentos = Documento.objects.filter(autor=usuario)
+    print(documentos)
+    context={
+        'docs':documentos,
+        'usuario':usuario
+    }
+    return render(request,"herramientas/Enviar.html",context)

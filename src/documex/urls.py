@@ -8,6 +8,7 @@ urlpatterns = [
     path("misDocumentos",views.misDocumentos, name="misDocumentos"),
     path("nuevoDocumento",views.nuevoDocumento,name="NuevoDocumento"),
     path("Documentos",views.Documentos, name="Documentos"),
+    path("Enviar",views.formEnviar, name="Enviar"),
     path("formSubir/",views.formSubir, name="formSubir"),
     path("eliminarDoc/<int:id>/",views.eliminarDoc, name="eliminarDoc"),
 ]
