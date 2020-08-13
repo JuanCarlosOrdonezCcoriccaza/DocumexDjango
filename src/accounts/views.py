@@ -179,7 +179,7 @@ def editarUsuario(request,id):
 def eliminarUsuario(request,id):
     usuario = Usuario.objects.get(id=id)
     usuario.delete()
-    return redirect('listarUser')
+    return redirect('herramienta')  
 
 def listarUsuarios(request):
     usuarios = Usuario.objects.all()

@@ -36,6 +36,9 @@
             <div class="input_send">
                 <input class="send" type="submit" value="Enviar" id="Enviar">
             </div>
+            {% for message in messages %}
+                <h3> {{message}}</h3>
+            {% endfor %}
         <!-- Table -->     
             <div class="limiter">
                 <div class="container-table100">
@@ -57,11 +60,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {% for doc in docs %}   
-                                    
-                                    <label for="documentos">
+                                    {% for doc in docs %}
                                     <tr>
-                                        <td class="column1"><input type="checkbox" id="documentos" name="{{doc.id}}" value="{{doc.id}}"></td>
+                                        <td class="column1"><input type="radio" id="lista" name="lista" value="{{doc.id}}"></td>
                                         <td class="column2">{{doc.titulo}}</td>
                                         <td class="column3">{{doc.descripcion}}</td>
                                         <td class="column4">
@@ -86,9 +87,8 @@
                                         <td class="column8"><a href="{%url 'eliminarDoc' doc.id %}">eliminar</a></td>
                                         {% endif %}
                                     </tr>
-                                    {% endfor %}
-                                    </label>    
                                     
+                                    {% endfor %}     
                                 </tbody>
                             </table>
                         </div>

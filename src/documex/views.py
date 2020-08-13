@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Documento
+from .models import Documento,Envios
 from accounts.models import Usuario
 # Create your views here.
 def index(request):
@@ -81,9 +81,30 @@ def formEnviar(request):
         correo = request.POST['correo']
         dni = request.POST['dni']
         direccion = request.POST['direccion']
-        documentos={
-            'docs':request.FILE['documentos']
-        }
-        
+        docsEnviar = request.POST['lista']
+        print(nombres)
+        print(apellidos)
+        print(correo)
+        print(dni)
+        print(direccion)
+        print(docsEnviar)
+        emisor=request.user
+        doc=Documento.objects.get(id=docsEnviar)
+        doc.enviado=True
+        enviar = Envios.objects.create(emisor=emisor,nombres=nombres,apellidos=apellidos,correo=correo,dni=dni,direccion=direccion,documento=doc)
+        enviar.save()
+        doc.save()
+        messages.info(request,'Enviado exitosamente')
+        return redirect('herramienta')
     return render(request,"herramientas/Enviar.html",context)
     
+def misEnvios(request):
+    usuario = request.user
+    print(usuario)
+    #documentos = Documento.objects.filter(autor=usuario)
+    docsenvios = Envios.objects.filter(emisor=usuario)
+    context={
+        'docs':docsenvios,
+        'usuario':usuario
+    }
+    return render(request,"herramientas/Enviados.html",context)

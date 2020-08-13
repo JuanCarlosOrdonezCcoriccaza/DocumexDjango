@@ -1,0 +1,52 @@
+{% load static %}
+<div class="misDocumentos" id="misDocumentos">
+    <div class="documentos">
+        <div class="destinations" id="destinations">
+            <div class="destinos-container">
+                <div class="section_title"><h2>Mis Envios</h2></div>
+            </div>
+        </div>
+        <!--Messages-->
+	    <!-- Table -->
+        <div class="limiter">
+            <div class="container-table100">
+                <div class="wrap-table100">
+                    <div class="table100">
+                        <table>
+                            {% if docs is None%}
+                                <h2>Aun no has enviado nada</h2>
+                                <h2>Has tu primer envio</h2>
+                            {% else %}
+                            <thead>
+                                <tr class="table100-head">
+                                    <th class="column1">Documento</th>
+                                    <th class="column2">Nombres</th>
+                                    <th class="column3">Apellidos</th>
+                                    <th class="column4">Correo</th>
+                                    <th class="column5">DNI</th>
+                                    <th class="column6">Direccion</th>
+                                    <th class="column7">Costo</th>   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for doc in docs %}
+                                <tr>
+                                    <td class="column1">{{doc.documento.titulo}}</td>
+                                    <td class="column2">{{doc.nombres}}</td>
+                                    <td class="column3">{{doc.apellidos}}</td>
+                                    <td class="column4">{{doc.correo}}</td>
+                                    <td class="column5">{{doc.dni}}</td>
+                                    <td class="column6">{{doc.direccion}}</td>
+                                    <td class="column7">${{doc.documento.costo}}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                            {%endif%}
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+    </div>
+</div>

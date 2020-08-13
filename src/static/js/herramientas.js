@@ -32,10 +32,6 @@ function loadEnviar(){
 }
 
 
-
-
-
-
 function loadListarUser(){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
@@ -57,4 +53,14 @@ function loadDocumentos(){
     };
     xhttp.open("GET", "Documentos", true);
     xhttp.send();
+}
+function loadEnviados(){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("pizarra").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "Enviados", true);
+  xhttp.send();
 }

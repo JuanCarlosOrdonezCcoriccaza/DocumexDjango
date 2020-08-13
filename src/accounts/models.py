@@ -45,6 +45,7 @@ class Usuario(AbstractBaseUser):
     estado      = models.BooleanField(default=True)
     admin       = models.BooleanField(default=False)
     imagen      = models.ImageField(upload_to="foto-Usuario",blank=True,null=True)
+    #enviados    = models.ManyToManyField(Envios,"Archivos Enviados",blank=True,null=True)
     #is_active   = models.BooleanField(default=False)
     #is_staff    = models.BooleanField(default=False)
     objects     = UsuarioManager()
