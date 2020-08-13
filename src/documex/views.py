@@ -13,21 +13,22 @@ def herramienta(request):
     return render(request,"herramienta.html")
 def allDocumentos(request):
     docs = Documento.objects.all()
-    return render(request,"herramientas/misDocumentos.html",{'docs':docs})
+    return render(request,"herramientas/allDocumentos.html",{'docs':docs})
 
 def misDocumentos(request):
-    docs = Documento.objects.all()
-    author = request.user   
-    for doc in docs:
+    documentos = Documento.objects.all()
+    author = request.user
+    docs='null'   
+    for doc in documentos:
         if doc.autor == author.username:
-            documentos+=doc 
+            docs=docs+doc 
     print(author.username)
-    return render(request,"herramientas/misDocumentos.html",{'docs':documentos})
+    return render(request,"herramientas/misDocumentos.html",{'docs':docs})
 
 def Documentos(request,id):
     usuario = Usuario.objects.get(id=id)
     docs = Documento.objects.all()
-    return render(request,"herramientas/misDocumentos.html",{'docs':docs,'usuario':usuario})
+    return render(request,"herramientas/Documentos.html",{'docs':docs,'usuario':usuario})
 
 def nuevoDocumento(request):
     print("probando el login_request")
