@@ -72,4 +72,16 @@ def formEnviar(request):
         'docs':documentos,
         'usuario':usuario
     }
+    if(request.method == 'GET'):
+        return render(request,"herramientas/Enviar.html",context)
+    elif(request.method == 'POST'):
+        print("entro post")
+        nombres = request.POST['nombres']
+        apellidos = request.POST['apellidos']
+        correo = request.POST['correo']
+        dni = request.POST['dni']
+        direccion = request.POST['direccion']
+        documentos = request.POST['documentos']
+        
     return render(request,"herramientas/Enviar.html",context)
+    
